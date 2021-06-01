@@ -3,7 +3,7 @@
     composer create-project roots/sage theme-name
     cd theme-name
     yarn && yarn build
-    
+
 **Install ACF**
 
 **Delete app/, resources/, .gitignore, .README.md**
