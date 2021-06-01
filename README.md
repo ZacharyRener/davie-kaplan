@@ -8,14 +8,16 @@
 
 **Delete app/, resources/, .gitignore, .README.md**
 
-**Download this git repo**
+    rm -rf app && rm -rf resources && rm .gitignore && rm README.md && rm package-lock.json
 
-**Drag all files into the fresh sage theme install**
-
-**Setup a new git repo for this theme and connect it to the project**
+**Pull this git repo**
 
     git init
-    git remote add origin origin-url
-    git add .
-    git commit -m "initial files"
-    git push origin main
+    git remote add origin https://github.com/ZacharyRener/hpf-sage
+    git pull origin master
+
+**Install Webpack and compile**
+
+    cd resources/assets
+    npm install
+    ./node_modules/.bin/webpack --watch
