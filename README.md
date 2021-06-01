@@ -1,6 +1,8 @@
-composer create-project roots/sage davie-kaplan
-cd davie-kaplan
-yarn && yarn build
+**Fresh install Sage theme**
 
-git init
-git remote add origin https://github.com/ZacharyRener/hpf
+    composer create-project roots/sage theme-name
+    cd theme-name
+    yarn && yarn build
+
+**Delete app/, resources/, .gitignore, .README.md**
+**Download this git repo**
