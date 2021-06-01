@@ -1,0 +1,144 @@
+body:not(.home) {
+  .banner {
+    margin-top: 141px;
+  }
+  .pull-right {
+    order: 2;
+  }
+  .hpf-box img {
+    width: 100%;
+  }
+}
+
+.leader-emblem {
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+  margin-right: 10px;
+}
+
+div#grid {
+  display: flex;
+}
+.col-md-8.about-body {
+  padding-top: 78px;
+}
+
+.floating-cta {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 100%;
+}
+
+.slide-img.banner-bg-img {
+  position: relative;
+}
+
+.cta.container {
+  text-align: right;
+  padding-left: 25%;
+}
+
+.cta > p {
+  font-family: "Poppins", sans-serif;
+  text-transform: uppercase;
+  font-size: 39px;
+  font-weight: 400;
+  letter-spacing: 0.025em;
+  color: white;
+  margin-bottom: 35px;
+}
+
+.background-dimmer {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.7);
+  top: 0;
+  z-index: 1;
+}
+
+.floating-cta {
+  z-index: 2;
+}
+
+.sidebar-offer a.button {
+  font-size: 12px !important;
+}
+aside li a.active {
+  color: #c0392b !important;
+}
+
+aside li a:hover {
+  text-decoration: none !important;
+  color: #c0392b !important;
+}
+.navigation li {
+  position: relative;
+}
+
+ul.sub-menu {
+  position: static;
+  top: 0;
+}
+
+ul.sub-menu.hidden {
+  display: none;
+}
+
+ul.sub-menu {
+  padding-left: 30px;
+  z-index: 10;
+  top: 30px;
+  padding-right: 30px;
+  border-top: none !important;
+}
+aside ul li {
+  margin: 0;
+  padding: 10px 0;
+}
+
+@media (min-width: 768px) {
+  .sub-menu a {
+    font-family: "Open Sans" !important;
+    /* color: #a7a7a7 !important; */
+    font-size: 14px !important;
+    line-height: 19px !important;
+    margin-bottom: 20px;
+    display: block;
+    text-transform: none !important;
+    letter-spacing: normal !important;
+  }
+}
+blockquote a {
+  color: inherit;
+  text-decoration: underline;
+}
+
+blockquote a:hover {
+  color: inherit;
+  text-decoration: underline;
+}
+.sub-menu li {
+  padding: 0px 10px;
+  margin: 5px 0;
+}
+ul.sub-menu {
+  padding-top: 0 !important;
+  margin-top: 15px !important;
+  padding-left: 5px;
+  padding-bottom: 0 !important;
+}
+li.has-children > a::after {
+  font-family: "Font Awesome 5 Pro";
+  font-weight: 600;
+  right: -10px !important;
+  position: relative;
+}
+
+li.has-children.right-arrow > a::after {
+  content: "\f0d7";
+}
+li.has-children:not(.right-arrow) > a::after {
+  content: "\f0da";
+}

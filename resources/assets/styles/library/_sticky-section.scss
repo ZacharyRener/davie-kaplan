@@ -1,0 +1,83 @@
+.sections {
+  display: flex;
+}
+
+.section-title {
+  font-family: "Poppins";
+  text-transform: uppercase;
+  font-weight: 500;
+  padding: 14px 34px;
+  background: #eee;
+  margin-right: 2px;
+  font-size: 12px;
+}
+
+#sticky-sections .navigation {
+  margin-bottom: 30px;
+  position: absolute;
+  top: 0;
+}
+
+.col-md-8.col-md-offset-1.col-sm-8.body-txt.pull-right.about-body {
+  position: relative !important;
+}
+
+section.about-body-section.slide-up {
+  position: relative;
+}
+
+.content {
+  padding-top: 85px;
+}
+
+#sticky-sections .navigation.fixed {
+  position: fixed;
+  top: 141px;
+}
+
+.section-title.active {
+  background: #990000;
+  color: white !important;
+}
+
+.section-title.active a {
+  color: white;
+}
+
+.section-title:not(.active) a {
+  color: black;
+}
+
+.section-title {
+  padding-left: 21px;
+  padding-right: 60px;
+}
+
+#sticky-sections .navigation {
+  top: 0;
+}
+
+.content {
+  padding-top: 60px;
+}
+
+.col-md-3.col-sm-4 {
+  padding-top: 7%;
+}
+
+.col-md-8.col-md-offset-1.col-sm-8.body-txt.pull-right.about-body {
+  margin-left: 95px;
+}
+
+.navigation.fixed {
+  background: white;
+}
+
+.navigation,
+.navigation * {
+  transition: $transition;
+}
+
+.section-title a {
+  text-decoration: none !important;
+}

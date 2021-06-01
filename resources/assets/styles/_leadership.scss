@@ -1,0 +1,79 @@
+.page-template-template-leadership {
+  .media-box-content {
+    position: static;
+    background: transparent;
+    opacity: 1;
+    padding-left: 0;
+  }
+
+  .media-box-logo img {
+    width: 100%;
+    height: 275px;
+    object-fit: cover;
+  }
+
+  .leader-emblem {
+    margin-right: 20px;
+    max-width: 30%;
+  }
+
+  .media-box-title {
+    font-family: "Open Sans", sans-serif;
+    color: #020202;
+    font-size: 18px;
+  }
+
+  .media-box-text {
+    font-family: "Poppins", sans-serif;
+    text-transform: uppercase;
+    color: #606060;
+    letter-spacing: 1px;
+  }
+
+  .media-box-content a {
+    text-decoration: none;
+  }
+  .media-boxes-drop-down-header {
+    background-color: #990000;
+    font-weight: 500;
+    font-family: "Poppins", sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: #ffffff;
+    min-width: 200px;
+  }
+}
+
+.single-leadership {
+  h2.leader-name {
+    color: #000000;
+    font-size: 40px !important;
+    text-transform: uppercase;
+    font-family: "Poppins", sans-serif;
+    letter-spacing: 1px;
+  }
+
+  .leader-title {
+    font-family: "Poppins", sans-serif;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: #6d6d6d;
+    font-weight: 500;
+  }
+
+  img.single-leader {
+    max-width: 100%;
+  }
+
+  p.lds_location {
+    display: none;
+  }
+
+  .leader-title {
+    margin-bottom: 20px;
+  }
+
+  .col-sm-5.col-sm-offset-1.col-xs-12.person-contact {
+    padding: 10px 20px;
+  }
+}

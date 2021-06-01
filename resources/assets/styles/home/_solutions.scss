@@ -1,0 +1,122 @@
+#industry-solutions {
+  background-image: url(http://spire.hingedev.com/wp-content/uploads/2021/03/industry-solutions-bg.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: bottom center;
+
+  &,
+  & * {
+    transition: $transition;
+  }
+
+  .solutions.container {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  .solution {
+    border-top: 8px solid #990000;
+    padding-top: 20px;
+    min-height: 200px;
+    @include phone {
+      min-height: unset;
+    }
+    margin-bottom: 30px !important;
+  }
+
+  .solution {
+    width: calc(20% - 20px);
+    &.hidden {
+      p.title {
+        font-family: "Poppins";
+        color: white;
+        text-transform: uppercase;
+        line-height: 28px;
+        font-size: 21px;
+        letter-spacing: 1px;
+        font-weight: 500;
+        white-space: pre-wrap;
+        overflow-wrap: break-word;
+      }
+      p.excerpt {
+        opacity: 0;
+        position: relative;
+        top: 30px;
+        left: 20px;
+      }
+      a.learn-more {
+        opacity: 0;
+        position: relative;
+        top: 30px;
+        left: 20px;
+      }
+      a.learn-more {
+        font-family: "Poppins";
+        color: #5999ac;
+        text-transform: uppercase;
+        line-height: 21px;
+        font-size: 14px;
+        letter-spacing: 1px;
+        font-weight: 500;
+      }
+    }
+    &:not(.hidden) {
+      background: white;
+      padding: 20px;
+      cursor: pointer;
+      p.title {
+        font-family: "Poppins";
+        color: #650000;
+        text-transform: uppercase;
+        line-height: 21px;
+        font-size: 18px;
+        letter-spacing: 0px;
+        font-weight: 600;
+        white-space: pre-wrap;
+        overflow-wrap: break-word;
+      }
+      p.excerpt,
+      a.learn-more {
+        position: relative;
+        top: 0;
+        left: 0;
+        opacity: 1;
+      }
+      a.learn-more {
+        font-family: "Poppins";
+        color: #5999ac;
+        text-transform: uppercase;
+        line-height: 21px;
+        font-size: 14px;
+        letter-spacing: 1px;
+        font-weight: 500;
+      }
+    }
+
+    margin: 10px;
+  }
+}
+
+.solutions.container {
+  margin-top: 50px;
+}
+
+section#industry-solutions {
+  padding-bottom: 150px;
+}
+
+@media (max-width: 1200px) {
+  #industry-solutions .solution {
+    width: calc(25% - 20px);
+  }
+}
+@media (max-width: 1000px) {
+  #industry-solutions .solution {
+    width: calc(33% - 20px) !important;
+  }
+}
+@media (max-width: 768px) {
+  #industry-solutions .solution {
+    width: calc(100%) !important;
+  }
+}

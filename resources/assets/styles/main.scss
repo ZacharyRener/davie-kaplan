@@ -1,0 +1,64 @@
+/**
+ * Import npm dependencies
+ *
+ * Prefix your imports with `~` to grab from node_modules/
+ * @see https://github.com/webpack-contrib/sass-loader#imports
+ */
+// @import "~some-node-module";
+
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700&display=swap");
+
+@import "./variables";
+
+$transition-primary: 0.8s cubic-bezier(0.2, 1, 0.3, 1);
+
+@mixin large {
+  @media (min-width: 1200px) {
+    @content;
+  }
+}
+
+@mixin medium {
+  @media (max-width: 1199px) and (min-width: 992px) {
+    @content;
+  }
+}
+
+@mixin small {
+  @media (max-width: 991px) and (min-width: 769px) {
+    @content;
+  }
+}
+
+@mixin phone {
+  @media (max-width: 768px) {
+    @content;
+  }
+}
+
+@mixin abovePhone {
+  @media (min-width: 769px) {
+    @content;
+  }
+}
+
+/** Import theme styles */
+@import "./global";
+@import "./library/navbar";
+
+@import "./home/slider";
+@import "./home/quickhit";
+@import "./home/services";
+@import "./home/experience";
+@import "./home/solutions";
+@import "./home/offers";
+@import "./home/clients";
+@import "./home/careers";
+@import "./home/seo";
+
+@import "./library/subpage";
+@import "./library/sticky-section";
+
+@import "./leadership";
+@import "./mobile";

@@ -1,0 +1,57 @@
+.home-slider {
+  .slide-txt h2 {
+    font-family: "Poppins", sans-serif;
+    text-transform: uppercase;
+    font-size: 53px;
+    font-weight: 400;
+    @media (max-width: 768px) {
+      font-size: 48px;
+      font-weight: 300;
+    }
+    letter-spacing: 0.025em;
+    max-width: 60%;
+    @media (max-width: 994px) {
+      max-width: 75% !important;
+    }
+    @media (max-width: 768px) {
+      max-width: 100% !important;
+    }
+    color: black;
+  }
+
+  .slide-txt a {
+    background: black !important;
+    border-radius: 0 !important;
+    padding: 8px 21px;
+    font-family: "Poppins", sans-serif;
+    text-transform: uppercase;
+    font-weight: 400;
+    letter-spacing: 2px;
+    font-size: 14px;
+  }
+
+  .slide-txt a {
+    padding-right: 70px;
+    position: relative;
+  }
+
+  .slide-txt a::after {
+    content: "";
+    background-color: #3f3f3f;
+    position: absolute;
+    right: 0;
+    width: 40px;
+    top: 0;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-image: url(http://spire.hingedev.com/wp-content/uploads/2021/03/arrow-right.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 10px;
+  }
+
+  ::after {
+  }
+}

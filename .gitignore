@@ -1,0 +1,21 @@
+# Include your project-specific ignores in this file
+# Read about how to use .gitignore: https://help.github.com/articles/ignoring-files
+.cache-loader
+dist
+node_modules
+npm-debug.log
+yarn-error.log
+/vendor
+resources/assets/config-local.json
+config
+.editorconfig
+.eslintrc.js
+.stylelintrc.js
+CHANGELOG.md
+CODE_OF_CONDUCT.md
+composer.json
+composer.lock
+LICENSE.md
+package.json
+phpcs.xml
+yarn.lock

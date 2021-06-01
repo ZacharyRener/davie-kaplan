@@ -1,0 +1,23 @@
+.quick-hit.container {
+  padding-top: 65px;
+  padding-bottom: 100px;
+  h1 {
+    color: #990000;
+    font-family: "Poppins", sans-serif;
+    text-transform: uppercase;
+    font-size: 32px;
+    letter-spacing: 1.25px;
+    margin-bottom: 18px;
+    @include phone {
+      font-size: 28px;
+      font-weight: 400;
+    }
+  }
+
+  p {
+    color: black;
+    font-family: "Open Sans", sans-serif;
+    line-height: 33px;
+    margin-bottom: 0;
+  }
+}

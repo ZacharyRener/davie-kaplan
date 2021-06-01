@@ -1,0 +1,36 @@
+section#careers {
+  background-color: #232323;
+  .pull-right {
+    float: right;
+  }
+
+  .careers-wrapper.row {
+    background-repeat: no-repeat;
+    margin-top: -73px;
+    padding-top: 50px;
+    padding-bottom: 150px;
+    @media (min-width: 769px) {
+      background-size: calc(50% - 50px);
+    }
+    @include phone {
+      background-size: contain;
+    }
+  }
+
+  .careers-wrapper.row {
+  }
+  p {
+    color: white;
+    font-family: "Open Sans", sans-serif;
+  }
+
+  .pull-right {
+    float: right;
+  }
+}
+
+@include phone {
+  .careers-wrapper.row {
+    padding-top: 500px !important;
+  }
+}
