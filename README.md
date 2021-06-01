@@ -1,8 +1,3 @@
-**Quick setup:**
-Search and replace theme-name with the name of your theme's directory
-
-    composer create-project roots/sage theme-name && cd theme-name && yarn && yarn build && rm -rf app && rm -rf resources && rm .gitignore && rm README.md && rm package-lock.json && git init && git remote add origin https://github.com/ZacharyRener/hpf-sage && git pull origin master && cd resources/assets && npm install && ./node_modules/.bin/webpack --watch
-
 **Fresh install Sage theme**
 
     composer create-project roots/sage theme-name
