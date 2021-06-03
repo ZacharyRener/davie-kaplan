@@ -4,22 +4,9 @@ import LoadingBar from "./_loadingBar";
 
 export default class Global {
   constructor() {
-    this.renderLoadingBars();
-    this.renderLoadingBars = this.renderLoadingBars.bind(this);
     this.handleTrayMenu();
     this.handleLeftNavHover();
     if (window.innerWidth > 768) this.makeOffersSticky();
-  }
-
-  renderLoadingBars() {
-    if (document.querySelectorAll(".loading-bar-root") != null) {
-      document.querySelectorAll(".loading-bar-root").forEach((loadingbar) => {
-        ReactDOM.render(
-          <LoadingBar cap={loadingbar.getAttribute("time-delay")} />,
-          loadingbar
-        );
-      });
-    }
   }
 
   handleTrayMenu() {
@@ -38,8 +25,9 @@ export default class Global {
 
   handleLeftNavHover() {
     if (document.querySelector("li.has-children .sub-menu") != null) {
-      const leftValue = document.querySelector("aside").getBoundingClientRect()
-        .left;
+      const leftValue = document
+        .querySelector("aside")
+        .getBoundingClientRect().left;
       document.querySelectorAll(".navigation > ul > li").forEach((pageItem) => {
         pageItem.addEventListener("click", (e) => {
           if (

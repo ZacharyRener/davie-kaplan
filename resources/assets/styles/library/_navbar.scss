@@ -1,23 +1,23 @@
 /* ============================================================== *
  * Utility Menu Colors                                            *
  * ============================================================== */
-$utility__background: #ffffff;
+$utility__background: #494949;
 $utility__social__static-color: #b7b8bb;
 $utility__social__hover-color: #ddd;
 $utility__menu__static-color: #a8a8a8;
 $utility__menu__hover-color: black;
 $utility__menu__font: $mainFont;
-$utility__menu__font-size: 0.9rem;
+$utility__menu__font-size: 0.85rem;
 $utility__menu__text-transform: uppercase;
-$utility__menu__font-weight: 500;
-$utility__search__background: #f0f0f0;
-$utility__search__color: #a8a8a8;
+$utility__menu__font-weight: 400;
+$utility__search__background: #606060;
+$utility__search__color: white;
 /* ============================================================== *
    * Primary Navigation Colors                                      *
    * ============================================================== */
-$primary__background: white;
-$primary__nav__color-static: #3d3d3d;
+$primary__background: rgba(255, 255, 255, 0.9);
 $primary__nav__color-hover: #3d3d3d;
+$primary__nav__color-static: #3d3d3d;
 $primary__nav__font: $mainFont;
 $primary__nav__font-size: 0.5rem;
 $primary__nav__text-transform: uppercase;
@@ -46,6 +46,12 @@ nav#primary {
   align-items: center;
 }
 
+#right-side form {
+  margin-bottom: 0;
+}
+#socials i {
+  font-size: 17px;
+}
 #header {
   position: fixed;
   top: 0;
@@ -121,7 +127,7 @@ nav#primary {
         border: none;
         padding: 5px 20px;
         color: $utility__search__color;
-        font-weight: 600;
+        font-weight: 400;
         font-size: $utility__menu__font-size;
         font-family: $utility__menu__font;
         text-transform: $utility__menu__text-transform;
@@ -132,7 +138,7 @@ nav#primary {
           font-size: $utility__menu__font-size;
           color: $utility__search__color;
           text-transform: $utility__menu__text-transform;
-          font-weight: 500;
+          font-weight: 400;
         }
       }
     }
@@ -297,7 +303,7 @@ nav#primary {
 }
 
 .dropdown-menu-custom {
-  background: #191919;
+  background: #494949;
   display: flex;
   padding: 30px 40px;
 }
@@ -312,24 +318,24 @@ nav#primary {
   padding-bottom: 15px;
   text-decoration: none;
   font-size: 1rem !important;
-  font-weight: 500;
+  font-weight: 400;
   letter-spacing: 1px !important;
   text-transform: uppercase;
-  font-family: "Poppins", sans-serif;
+  font-family: "Rubik", sans-serif;
 }
 
 a.section-title-custom {
   color: white;
   &:hover {
-    color: #a7a7a7;
+    color: #fbc84d;
     text-decoration: none;
   }
   text-decoration: none;
-  font-size: 0.9rem !important;
-  font-weight: 600;
-  letter-spacing: 1px !important;
-  text-transform: uppercase;
-  font-family: "Poppins", sans-serif;
+  font-size: 1rem !important;
+  font-weight: 400;
+  letter-spacing: normal !important;
+  text-transform: none;
+  font-family: "Rubik", sans-serif;
 }
 
 a.sub-menu-link {
@@ -372,7 +378,7 @@ nav#primary {
   width: 100px;
   position: absolute;
   top: -10px;
-  background: #990000;
+  background: #f06944;
   height: 10px;
   left: 50%;
   transform: translateX(-50%);
@@ -384,7 +390,7 @@ nav#primary {
 .dropdown-menu-wrapper {
   left: 50%;
   transform: translateX(-50%);
-  top: 92px;
+  top: 82px;
   position: absolute;
   margin-top: 10px;
 }
@@ -393,5 +399,20 @@ nav#primary {
   &:hover {
     color: inherit !important;
     text-decoration: none !important;
+  }
+}
+
+@include phone {
+  img.site-logo {
+    max-width: unset !important;
+  }
+
+  #header #primary-nav {
+    padding-bottom: 20px !important;
+    padding-top: 20px !important;
+  }
+
+  section#mobile-menu {
+    background: #494949 !important;
   }
 }

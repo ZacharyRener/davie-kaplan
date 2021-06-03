@@ -1,6 +1,6 @@
 .home-slider {
   .slide-txt h2 {
-    font-family: "Poppins", sans-serif;
+    font-family: "Rubik", sans-serif;
     text-transform: uppercase;
     font-size: 53px;
     font-weight: 400;
@@ -19,39 +19,40 @@
     color: black;
   }
 
-  .slide-txt a {
-    background: black !important;
-    border-radius: 0 !important;
-    padding: 8px 21px;
-    font-family: "Poppins", sans-serif;
-    text-transform: uppercase;
-    font-weight: 400;
-    letter-spacing: 2px;
-    font-size: 14px;
+  .slide-txt h2 {
+    text-transform: none;
+    font-weight: 600;
+    color: #153355;
+    margin-bottom: 40px;
   }
+}
 
-  .slide-txt a {
-    padding-right: 70px;
-    position: relative;
-  }
-
-  .slide-txt a::after {
-    content: "";
-    background-color: #3f3f3f;
+.home {
+  .slide-txt {
     position: absolute;
-    right: 0;
-    width: 40px;
-    top: 0;
-    height: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background-image: url(http://spire.hingedev.com/wp-content/uploads/2021/03/arrow-right.png);
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: 10px;
+    bottom: 15%;
+    @include phone {
+      top: 50%;
+      transform: translateY(-50%);
+    }
+    a {
+      @include button;
+    }
   }
 
-  ::after {
+  .home-slider .owl-slide,
+  .home-slider {
+    max-height: 100vh;
+    min-height: 700px;
+  }
+
+  .content {
+    padding-top: 0 !important;
+  }
+
+  .slide-vid video,
+  .slide-vid source {
+    width: 100%;
+    object-fit: cover;
   }
 }

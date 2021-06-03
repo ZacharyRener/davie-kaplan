@@ -1,0 +1,103 @@
+.pathways {
+  hr {
+    margin-bottom: 50px;
+    border-width: 2px;
+    border-color: #e7e7e7;
+  }
+  .headline {
+    font-family: "Rubik", sans-serif;
+    text-transform: uppercase;
+    font-weight: 400;
+    color: #153355;
+    font-size: 20px;
+  }
+  .a-button {
+    padding: 0;
+    height: 252px;
+    @media (max-width: 991px) {
+      margin-bottom: 30px;
+    }
+    .wrapper {
+      margin-right: 30px;
+      @media (max-width: 575px) {
+        margin-right: 0;
+      }
+      > a {
+        border: 1px solid #e7e7e7 !important;
+        height: 100%;
+        display: flex;
+        align-items: flex-end;
+        padding-bottom: 30px;
+        padding-left: 50px;
+        padding-right: 50px;
+        @media (max-width: 1200px) {
+          padding-left: 20px;
+        }
+        transition: $transition;
+        position: relative;
+        &:hover {
+          text-decoration: none;
+        }
+        span {
+          z-index: 2;
+          .content {
+            font-family: "Rubik", sans-serif;
+            font-size: 32px;
+            color: #153355;
+            font-weight: 600;
+            line-height: 35px;
+            min-height: 70px;
+            z-index: 2;
+            @media (max-width: 991px) {
+              font-size: 18px;
+              line-height: 23px;
+            }
+          }
+        }
+      }
+    }
+  }
+  .gradient-overlay {
+    background: linear-gradient(
+      19deg,
+      rgba(244, 244, 244, 1) 0%,
+      rgba(255, 255, 255, 1) 23%,
+      rgba(255, 255, 255, 1) 31%,
+      rgba(255, 255, 255, 0) 100%
+    );
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    left: 0px;
+    bottom: 0px;
+    z-index: 0;
+    background-repeat: no-repeat;
+    background-size: 100% 300px;
+    &:hover {
+      background-position-y: -48px;
+    }
+    transition: $transition;
+  }
+
+  .animating-arrow {
+    &:not(.hover) {
+      width: 35%;
+    }
+    &.hover {
+      width: 100%;
+    }
+    transition: $transition;
+    overflow-x: hidden;
+    @media (max-width: 991px) {
+      img {
+        object-fit: contain;
+        max-width: 121px;
+      }
+    }
+  }
+}
+
+.a-e-p-buttons {
+  padding-right: 0 !important;
+  margin-right: 0 !important;
+}

@@ -1,77 +1,81 @@
 section#home-offers {
-    background: #e8e8e8;
-    padding-bottom: 50px;
-    .col-sm-12.row.b-t-p-section {
-        position: relative;
-        top: -84px;
-    }
-    
-    .our-team-box {
-        background-color: white;
-    }
-    
-    h5 a {
-        font-family: 'Poppins';
-        color: #990000;
-        text-transform: uppercase;
-        line-height: 21px;
-        font-size: 17px;
-        letter-spacing: 1px;
-        font-weight: 500;
-        margin-top: 40px;
-    }
-    
-    h5 {
-        margin-top: 10px;
-    }
-    
-    .our-team-box span {font-family: 'Open Sans', sans-serif;margin-bottom: 50px;display: block;}
-    
-    a.button.arrow.red {
-        position: absolute;
-        left: 0;
-        width: 100%;
-        bottom: 0;
-    }
-    
-    .our-team-box {
-        position: relative;
-    }
-    h6 a {
-        color: black;
-        font-weight: 600;
-    }
-    
-    h6 {font-family: 'Open Sans', sans-serif;}
-    
-    .blog-box ul {
-        padding-left: 0;
-        list-style: none;
-        margin-top: 20px;
-    }
-    
-    span.datentime {
-        font-size: 12px;
-        margin-top: 0;
-        line-height: 7px;
-    }
-    .our-team-box.blog-box {
-        height: 100%;
-    }
+  background: #e8e8e8;
+  padding-bottom: 50px;
+  .col-sm-12.row.b-t-p-section {
+    position: relative;
+    top: -84px;
+  }
 
-    @media(max-width:1000px) and (min-width:769px){
-        .col-sm-4 {
-            max-width: 50% !important;
-            flex: 0 0 50% !important;
-            margin-bottom: 50px;
-            min-height: 300px;
-        }
-    }
-    @media(max-width:768px){
-        .col-sm-4 {
-            margin-bottom: 50px;
+  .our-team-box {
+    background-color: white;
+  }
 
-        }
+  h5 a {
+    font-family: "Rubik";
+    color: #990000;
+    text-transform: uppercase;
+    line-height: 21px;
+    font-size: 17px;
+    letter-spacing: 1px;
+    font-weight: 500;
+    margin-top: 40px;
+  }
+
+  h5 {
+    margin-top: 10px;
+  }
+
+  .our-team-box span {
+    font-family: "Open Sans", sans-serif;
+    margin-bottom: 50px;
+    display: block;
+  }
+
+  a.button.arrow.red {
+    position: absolute;
+    left: 0;
+    width: 100%;
+    bottom: 0;
+  }
+
+  .our-team-box {
+    position: relative;
+  }
+  h6 a {
+    color: black;
+    font-weight: 600;
+  }
+
+  h6 {
+    font-family: "Open Sans", sans-serif;
+  }
+
+  .blog-box ul {
+    padding-left: 0;
+    list-style: none;
+    margin-top: 20px;
+  }
+
+  span.datentime {
+    font-size: 12px;
+    margin-top: 0;
+    line-height: 7px;
+  }
+  .our-team-box.blog-box {
+    height: 100%;
+  }
+
+  @media (max-width: 1000px) and (min-width: 769px) {
+    .col-sm-4 {
+      max-width: 50% !important;
+      flex: 0 0 50% !important;
+      margin-bottom: 50px;
+      min-height: 300px;
     }
+  }
+  @media (max-width: 768px) {
+    .col-sm-4 {
+      margin-bottom: 50px;
+    }
+  }
 }
-
