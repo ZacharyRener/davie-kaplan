@@ -1,6 +1,10 @@
 <div class="pathways @if($pathways_style == 'FULLBOX') {{ "fullwidth" }} @endif container slide-up" @if($pathways_style == 'NONE') {{ 'style="padding-top: 80px !important;"' }} @else {{ '' }} @endif >
+    @if(!empty($pathway_heading))
+        <p class='headline'>{{$pathway_heading}}</p>
+        <hr/>
+    @endif
     <div class="col-sm-12 a-e-p-buttons row" @if($pathways_style == 'NONE') {{ 'style="display: none !important;"' }} @else {{ '' }} @endif >
-			
+
         @if($pathways_style == 'INDBOX')
             @include('partials.home.pathways.individual-paths')
         @endif

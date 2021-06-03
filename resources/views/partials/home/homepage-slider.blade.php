@@ -20,38 +20,41 @@ $slide_image = !empty(get_field('slide_image'))
     <div class="owl-slider">
         <div class="owl-carousel">
 
-            @foreach($homepage_slider as $slide)
-
+            @if(have_rows('homepage-slider') )
+                @while( have_rows('homepage-slider') )
                 @php
-                $slslide_image = $slide->slide_image;
-                $slslide_text = $slide->slide_text;
-                $slider_text_alignment = $slide->slider_text_alignment;
-                $slslide_heading = $slide->slide_heading;
-                $slbutton_text = $slide->button_text;
-                $slbutton_link = $slide->button_link;
-                $slheading_size = $slide->heading_font_size;
-                $heading_line_height = $slide->heading_line_height;
+                the_row();
+                $slslide_image = esc_html(get_sub_field('slide_image'));
+                $slslide_text = get_sub_field('slide_text');
+                $slider_text_alignment = get_sub_field('slider_text_alignment');
+                $slslide_heading = esc_html(get_sub_field('slide_heading'));
+                $slbutton_text = esc_html(get_sub_field('button_text'));
+                $slbutton_link = esc_html(get_sub_field('button_link'));
+                $slheading_size = esc_html(get_sub_field('heading_font_size'));
+                $heading_line_height = esc_html(get_sub_field('heading_line_height'));
 
-                $slheading_family = $slide->heading_font_family;
-                $slheading_style = $slide->heading_font_style;
-                $slheading_transform = $slide->heading_font_transform;
+                $slheading_family = esc_html(get_sub_field('heading_font_family'));
+                $slheading_style = esc_html(get_sub_field('heading_font_style'));
+                $slheading_transform = esc_html(get_sub_field('heading_font_transform'));
 
-                $slheading_color = $slide->heading_font_color;
-                $slcopy_font_size = $slide->sl_copy_font_size;
-                $text_line_height = $slide->text_line_height;
+                $slheading_color = esc_html(get_sub_field('heading_font_color'));
+                $slcopy_font_size = esc_html(get_sub_field('sl_copy_font_size'));
+                $text_line_height = esc_html(get_sub_field('text_line_height'));
 
-                $slcopy_font_family = $slide->sl_copy_font_family;
-                $slcopy_font_style = $slide->sl_copy_font_style;
+                $slcopy_font_family = esc_html(get_sub_field('sl_copy_font_family'));
+                $slcopy_font_style = esc_html(get_sub_field('sl_copy_font_style'));
 
-                $slcopy_font_color = $slide->sl_copy_font_color;
-                $slbutton_color = $slide->sl_button_color;
-                $slbutton_border_radius = $slide->sl_button_border_radius;
-                $slbutton_font_color = $slide->sl_button_font_color;
-                $sl_box_bg_color = $slide->sl_box_bg_color;
-                $sl_box_bg_opacity = $slide->sl_box_bg_opacity;
-                $sl_box_border_radius = $slide->sl_box_border_radius;
-                $sl_boxed_content = $slide->sl_boxed_content;
+                $slcopy_font_color = esc_html(get_sub_field('sl_copy_font_color'));
+                $slbutton_color = esc_html(get_sub_field('sl_button_color'));
+                $slbutton_border_radius = esc_html(get_sub_field('sl_button_border_radius'));
+                $slbutton_font_color = esc_html(get_sub_field('sl_button_font_color'));
+                $sl_box_bg_color = esc_html(get_sub_field('sl_box_bg_color'));
+                $sl_box_bg_opacity = esc_html(get_sub_field('sl_box_bg_opacity'));
+                $sl_box_border_radius = esc_html(get_sub_field('sl_box_border_radius'));
+                $sl_boxed_content = esc_html(get_sub_field('sl_boxed_content'));
 
+                ?>
+                <?php
                 $slider_class = '';
                 if($sl_slider_style == 'SLSTY1') {
                     $slider_class = 'style1';
@@ -60,11 +63,9 @@ $slide_image = !empty(get_field('slide_image'))
                 } else {
                     $slider_class = 'style1';
                 }
-
                 $boxedopacity = '';
                 $boxed_class = '';
                 $boxed_output = '';
-
                 if($sl_slider_style == 'SLSTY2') {
                     if($sl_boxed_content == 'Yes') {
                         $boxedopacity = $sl_box_bg_opacity;
@@ -79,7 +80,6 @@ $slide_image = !empty(get_field('slide_image'))
                         $boxed_class = 'boxed';
                     }
                 }
-
                 if($slheading_size) {
                     $slheading_size = $slheading_size;
                 } else {
@@ -140,11 +140,11 @@ $slide_image = !empty(get_field('slide_image'))
                         
                 <div class="owl-slide {{ $slider_class }} {{ $boxed_class }}">
 
-                    @if (!empty($slide->slide_video))
+                    @if (!empty(get_sub_field('slide_video')))
 
                         <div class="slide-vid">
                             <video autoplay id="owl-vid" height="100%" width="auto" muted="muted" loop >
-                                <source src="{{ $slide->slide_video }}" type="video/mp4" >
+                                <source src="{{ get_sub_field('slide_video') }}" type="video/mp4" >
                             </video>
                         </div>
 
@@ -166,7 +166,8 @@ $slide_image = !empty(get_field('slide_image'))
                     </div>
                 </div>	
 
-            @endforeach
+            @endwhile
+            @endif
         </div>
     </div>
 </div>

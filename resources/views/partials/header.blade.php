@@ -37,14 +37,14 @@
     <section id="primary-nav" class="">
       <div class="container d-flex flex-row">
         <?php if(get_field('logo', 'options')): ?>
-        <!-- 
+        
         <a href="/">
           <img src="<?php the_field('logo', 'options'); ?>" class="site-logo" alt="" />
         </a>
-        -->
-        <a href="/" class='site-logo-svg'>
+        
+        <!-- <a href="/" class='site-logo-svg'>
             @include('partials.logo')
-        </a>
+        </a>-->
         <?php endif; ?>
         <nav id="primary">
             @if(get_field('enable_tray_menu', 'options'))

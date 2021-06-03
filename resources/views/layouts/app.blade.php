@@ -25,9 +25,4 @@
         @include('partials.home.owl-carousel-logic')
     @endif
   </body>
-  <div class='cta-wrapper'>
-    <a href='/contact'>
-        @include('partials.contact-svg')
-    </a>
-  </div>
 </html>

@@ -9,8 +9,6 @@ class FrontPage extends Controller
 
     protected $acf = true;
 
-    
-
 
 
 }
