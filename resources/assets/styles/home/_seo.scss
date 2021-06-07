@@ -1,13 +1,9 @@
 section.body-section.seo-copy {
-  background-image: url(http://spire.hingedev.com/wp-content/uploads/2021/04/Homepage-Bottom.jpg);
+  background-image: url(/wp-content/uploads/2021/06/seo-copy-bg.png);
   padding-top: 88px;
-  padding-bottom: 0px;
+  padding-bottom: 60px;
   background-size: cover;
   .container {
-    background: #990000;
-    padding: 80px;
-    position: relative;
-    top: -120px;
   }
 
   p.section-header {
@@ -15,17 +11,19 @@ section.body-section.seo-copy {
 
   h1 {
     font-family: "Rubik";
-    text-transform: uppercase;
-    color: white;
-    font-size: 22px;
-    letter-spacing: 1.5px;
-    font-weight: 400;
-    margin-bottom: 20px;
+    color: #f06944;
+    font-size: 47px;
+    font-weight: 600;
+    margin-bottom: 40px;
+    max-width: 70%;
+    @media (max-width: 1000px) {
+      max-width: 100%;
+    }
   }
 
   p {
-    color: white;
-    font-family: "Open Sans", sans-serif;
+    color: #272727;
+    font-family: "Rubik", sans-serif;
     margin-bottom: 30px;
   }
 
@@ -36,12 +34,16 @@ section.body-section.seo-copy {
 
 @include phone {
   section.body-section.seo-copy .container {
-    padding: 50px 20px !important;
+    @media (min-width: 769px) {
+      padding: 50px 20px !important;
+    }
   }
 
   section.body-section.seo-copy {
-    padding-left: 30px !important;
-    padding-right: 30px !important;
+    @media (min-width: 769px) {
+      padding-left: 30px !important;
+      padding-right: 30px !important;
+    }
     background-position: bottom center !important;
   }
 }

@@ -1,4 +1,5 @@
 .pathways {
+  margin-bottom: 125px;
   hr {
     margin-bottom: 50px;
     border-width: 2px;
@@ -93,6 +94,11 @@
         object-fit: contain;
         max-width: 121px;
       }
+    }
+  }
+  @media (max-width: 768px) {
+    .col-sm-12.a-e-p-buttons.row {
+      justify-content: center;
     }
   }
 }

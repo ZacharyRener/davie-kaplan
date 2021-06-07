@@ -11,13 +11,13 @@ if($border_thickness > 0) {
 @endphp
 
 
-<div class="col-sm-4 team-box" style="text-align: <?php echo $offer_alignment; ?>">
+<div class="col-md-4 col-sm-12 team-box" style="text-align: <?php echo $offer_alignment; ?>">
 
-    
+    <a href="{{ get_field( 'offer_link', $offer_id) }} ">
+        {{ get_field( 'offer_title', $offer_id ) }}
+    </a>
 
     <div class="our-team-box" style="background-color: {{ $custom_bg }} border-color: {{ $border_color }} border-width: {{ $border_thickness }}px; border-style: {{ $border_style }}">
-
-        
 
         @if ( get_field('split_image', $offer_id) ) 
             <div class="row">
@@ -36,11 +36,9 @@ if($border_thickness > 0) {
             </a>
         @endif
 
-        <div style="padding: 10px 25px 25px 25px;">
+        <div>
             <h5>
-                <a href="{{ get_field( 'offer_link', $offer_id) }} ">
-                    {{ get_field( 'offer_title', $offer_id ) }}
-                </a>
+                
             </h5>
             <span>{!! get_field( 'offer_excerpt', $offer_id ) !!}</span>
             <a href="{{ get_field( 'offer_link', $offer_id ) }}" class="button arrow red">

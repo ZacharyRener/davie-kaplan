@@ -24,11 +24,11 @@
 
             @if($counter < 3)
 
-            <div class="col-sm-4 team-box">
-                
+            <div class="col-sm-12 col-md-4 team-box">
+                <h5><a href='#'>{{ $dynamic_offer_title }}</a></h5>
                 <div class="our-team-box blog-box" style="background-color: {{ $custom_bg }}">
-                    <div style="padding: 10px 25px 25px 25px;">
-                        <h5><a href='#'>{{ $dynamic_offer_title }}</a></h5>
+                    <div>
+                        
                         <ul>
                             @php 
                             $args = array(
@@ -54,8 +54,8 @@
                             @php wp_reset_query(); @endphp
 
                         </ul>
-                        <a href="/insights/articles" class="button arrow red">
-                            View Our Articles
+                        <a href="/resources/blog" class="button arrow red">
+                            Visit The Blog
                         </a>
                     </div>
                 </div>

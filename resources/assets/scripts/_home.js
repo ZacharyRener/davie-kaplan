@@ -2,6 +2,7 @@ import React from "react";
 import ReactDOM from "react-dom";
 import SpireServices from "./library/_spire-services";
 import LoadingBar from "./_loadingBar";
+import SlickCarousel from "./_slick-carousel";
 
 function isInViewport(element) {
   const rect = element.getBoundingClientRect();
@@ -20,6 +21,25 @@ export default class Home {
     this.handleHiddenHover(".solution");
     this.matchOfferHeights();
     this.handleIndustryHover();
+    this.renderSlickCarousel();
+  }
+
+  renderSlickCarousel() {
+    // For the fullwidth slider section, not the hero slider
+    jQuery(".slickCarousel").slick({
+      dots: true,
+      infinite: true,
+      speed: 500,
+      slidesToShow: 1,
+      slidesToScroll: 1,
+      appendDots: jQuery(".dots-container"),
+    });
+    jQuery("#slickCarouselWrapper .ontainer.for-dots").attr(
+      "style",
+      `top:${
+        jQuery("#slickCarouselWrapper .content-wrapper").position().top - 40
+      }px`
+    );
   }
 
   handleHiddenHover(selector) {
