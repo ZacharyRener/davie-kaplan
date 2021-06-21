@@ -1,13 +1,29 @@
 @php
 
-$leadershipParentId = 309;
-$libraryParentId = 0;
 $page_top_banner_image = get_field('page_top_banner_image', $parentId);
 
 $parentId = get_the_ID();
 if(empty($page_top_banner_image)) {
     $parentId = $parent_id;
 }
+
+$leadershipParentId = 483;
+$libraryParentId = 483;
+$newsParentId = 483;
+$projectParentId = 483;
+$postParentId = 483;
+
+if(get_post_type() == "leadership")
+    $parentId = $leadershipParentId;
+
+if(get_post_type() == "news")
+    $parentId = $leadershipParentId;
+
+if(get_post_type() == "project")
+    $parentId = $projectParentId;
+
+if(get_post_type() == "post" || get_post_type() == 'library')
+    $parentId = $postParentId;   
 
 $thumb = get_field('page_top_banner_image', $parentId);
 

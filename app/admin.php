@@ -184,6 +184,18 @@ add_action( 'init', function(){
 	);
 	register_post_type( 'leadership', $args );
 
+    $args = array(
+        'hierarchical'      => true,
+        'labels'            => $labels,
+        'show_ui'           => true,
+        'show_admin_column' => true,
+        'query_var'         => true,
+        'rewrite'           => array( 'slug' => 'Leadership-Type' ),
+        'show_in_rest'      => true
+    );
+
+    register_taxonomy( 'team-type', array( 'leadership' ), $args );
+
     $labels = array(
 		'name'                  => _x( 'News', 'Post Type General Name', 'jtptheme' ),
 		'singular_name'         => _x( 'News', 'Post Type Singular Name', 'jtptheme' ),

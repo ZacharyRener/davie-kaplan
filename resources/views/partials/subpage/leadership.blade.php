@@ -21,10 +21,9 @@
                 <ul class="media-boxes-drop-down-menu filters" data-id="third-filter">
                   <!--<li><a class="selected" href="#" data-filter="*">Filter By Category</a></li>-->
 	                <?php
-	                   $terms = get_terms("leadership-category", array( 
+	                   $terms = get_terms("team-type", array( 
                         'orderby' => 'name',
                         'order'   => 'ASC',
-                        'exclude' => array( 17, 18 ),
                         ) );
 	                   $count = count($terms);
 	                   
@@ -73,7 +72,7 @@
         
 
                 <?php
-                $terms = get_the_terms( get_the_ID(), 'leadership-category' );
+                $terms = get_the_terms( get_the_ID(), 'team-type' );
                             
                 if ( $terms && ! is_wp_error( $terms ) ) : 
                     $links = array();

@@ -5,7 +5,7 @@
                 // if the team member is listed as a speaker, display below
                 if(has_term( 'speaker', 'member-type', null )){ ?>
 
-                    <h2 class="leadership-name"><?php echo get_field('lds_first_name') . ' ' . get_field('lds_last_name'); ?></h1>
+                    <h1 class="leadership-name"><?php echo get_field('lds_first_name') . ' ' . get_field('lds_last_name'); ?></h1>
 
                     <h4 class="leadership-title" style="color: #302f2e !important; text-transform: none !important;"><?php echo get_field('lds_title');?></h4>
                     
@@ -168,8 +168,8 @@
 
                 ?>      
                     <!-- loop -->
-                        <h2 class="leader-name"><?php echo get_field('lds_first_name') . ' ' . get_field('lds_last_name'); ?><?php if(get_field('lds_sm_credentials')) { echo ", " .get_field('lds_sm_credentials');}?></h1>
-                        <div class="leader-title"><?php echo get_field('lds_title');?></div>
+                        <h1 class="leader-name"><?php echo get_field('lds_first_name') . ' ' . get_field('lds_last_name'); ?><?php if(get_field('lds_sm_credentials')) { echo ", " .get_field('lds_sm_credentials');}?></h1>
+                        <h2 class="leader-title"><?php echo get_field('lds_title');?></h2>
                         
                 <p class="lds_location"><?php echo get_field('lds_location');?></p>
                 

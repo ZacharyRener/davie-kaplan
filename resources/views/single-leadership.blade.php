@@ -9,5 +9,6 @@
                 @include('partials.subpage.sidebar')
             </div>
         </div>
+        @include('partials.single.fun-fact')
     </section>
 </div>

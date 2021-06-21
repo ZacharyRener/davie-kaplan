@@ -9,6 +9,7 @@ import SingleProject from "./_single-project";
 import TheBlog from "./_blog";
 import StickySections from "./library/_sticky-sections";
 import Whitepapers from "./_whitepapers";
+import SingleLeadership from "./_single-leadership";
 
 document.addEventListener("DOMContentLoaded", () => {
   load("home", () => new Home());
@@ -22,4 +23,5 @@ document.addEventListener("DOMContentLoaded", () => {
   load("page-template-template-blog", () => new TheBlog());
   load("page-template-template-leadership", () => new Experience());
   load("page-template-template-whitepapers", () => new Whitepapers());
+  load("single-leadership", () => new SingleLeadership());
 });

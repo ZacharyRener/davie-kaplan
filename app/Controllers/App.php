@@ -65,11 +65,11 @@ class App extends Controller
 
     public function parent_id() {
 
-        $leadershipParentId = 309;
-        $libraryParentId = 0;
-        $newsParentId = 309;
-        $projectParentId = 735;
-        $postParentId = 741;
+        $leadershipParentId = 483;
+        $libraryParentId = 480;
+        $newsParentId = 480;
+        $projectParentId = 480;
+        $postParentId = 480;
 
         $parentId = wp_get_post_parent_id(get_the_ID()) == 0
             ? get_the_ID() 
@@ -100,7 +100,7 @@ class App extends Controller
 
     public function child_pages() {
 
-        $leadershipParentId = 309;
+        $leadershipParentId = 480;
         $libraryParentId = 0;
         $newsParentId = 309;
         $projectParentId = 735;
