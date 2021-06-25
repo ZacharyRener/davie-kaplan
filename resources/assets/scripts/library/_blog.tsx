@@ -257,7 +257,7 @@ export default class Blog extends Component<AppProps, AppState> {
   render() {
     return (
       <section id="blogPage">
-        <div className="sidebar col-md-3">
+        <div className="">
           <div className="media-boxes-search">
             <span className="media-boxes-icon fa fa-search"></span>
             <input
@@ -335,7 +335,7 @@ export default class Blog extends Component<AppProps, AppState> {
           </div>
         </div>
 
-        <div className="blogs col-md-9">
+        <div className="blogs about-body">
           <section id="selectedCats" className={this.state.selectedClass}>
             <span onClick={this.handleCategoryRemoval}>
               {this.state.selectedCat}
@@ -367,13 +367,13 @@ export default class Blog extends Component<AppProps, AppState> {
             return (
               <div className="col-md-4 post" key={id}>
                 {image()}
-                <a href={post.link}>{post.title.rendered}</a>
                 <div className="post-footer">
                   <div className="date">{date}</div>
                 </div>
+                <a href={post.link}>{post.title.rendered}</a>
                 <div
                   className="excerpt"
-                  dangerouslySetInnerHTML={{ __html: post.title.rendered }}
+                  dangerouslySetInnerHTML={{ __html: post._embedded['author'][0].name }}
                 />
               </div>
             );

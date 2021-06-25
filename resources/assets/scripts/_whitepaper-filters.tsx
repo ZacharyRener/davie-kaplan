@@ -217,7 +217,7 @@ export default class WhitepaperFilters extends Component<AppProps, AppState> {
   render() {
     return (
       <section id="blogPage">
-        <div className="sidebar col-md-3">
+        <div className="sidebar">
           <div className="media-boxes-search">
             <span className="media-boxes-icon fa fa-search"></span>
             <input

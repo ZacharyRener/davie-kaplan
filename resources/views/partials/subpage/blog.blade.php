@@ -42,6 +42,8 @@
 
     @endif
 
+    <h1>Blog</h1>
+
     <div class="featured-content-wrapper sidebar-box">
         <div class="featured-content">
             <div class="col-xs-12">
@@ -52,9 +54,9 @@
                     <h5 class="ftr-content-title">Featured Article</h5>
                     <h4>{{ $title }}</h4>
                 </div>
-                <p>{{ $date }}</p>
+                <p style='display:none;'>{{ $date }}</p>
                 <a href="{{ $url }}"
-                    class="button red no-arrow">Explore the Article</a>
+                    class="button red no-arrow">Read Post</a>
             </div>
         </div>
     </div>

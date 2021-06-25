@@ -356,7 +356,7 @@ a.section-title-custom {
 }
 
 .column {
-  min-width: 225px;
+  min-width: 165px;
   margin-right: 50px;
 }
 
@@ -415,4 +415,28 @@ nav#primary {
   section#mobile-menu {
     background: #494949 !important;
   }
+}
+
+a.sub-menu-link {
+  margin-bottom: 0 !important;
+}
+
+.sub-menu {
+  margin-bottom: 10px !important;
+}
+
+.dropdown-menu-custom .column:nth-child(1):nth-last-child(1) {
+  margin-right: 0 !important;
+}
+
+a.section-title-custom {
+  line-height: 19px;
+}
+
+.section {
+  margin-bottom: 16px;
+}
+
+.section:nth-last-child(1) {
+  margin-bottom: 0 !important;
 }
