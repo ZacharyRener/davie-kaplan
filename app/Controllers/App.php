@@ -69,7 +69,7 @@ class App extends Controller
         $libraryParentId = 480;
         $newsParentId = 480;
         $projectParentId = 480;
-        $postParentId = 480;
+        $postParentId = 484;
 
         $parentId = wp_get_post_parent_id(get_the_ID()) == 0
             ? get_the_ID() 
@@ -101,10 +101,10 @@ class App extends Controller
     public function child_pages() {
 
         $leadershipParentId = 480;
-        $libraryParentId = 0;
+        $libraryParentId = 519;
         $newsParentId = 309;
         $projectParentId = 735;
-        $postParentId = 741;
+        $postParentId = 519;
 
         $parentId = wp_get_post_parent_id(get_the_ID()) == 0 ?
             get_the_ID() : wp_get_post_parent_id(get_the_ID());
@@ -120,6 +120,9 @@ class App extends Controller
 
         if(get_post_type() == "post" || get_post_type() == 'library')
             $parentId = $postParentId;   
+
+        if(get_post_type() == "library")
+            $parentId = $libraryParentId;
 
         $mainLink = get_the_permalink($parentId);
         $mainTitle = get_the_title($parentId);

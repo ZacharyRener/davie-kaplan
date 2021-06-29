@@ -52,8 +52,15 @@
             ?>
 
             <div class="row library-item">
-                <div class="col-md-12">
-                    <h3><a href="<?php echo get_the_permalink(); ?>" style="font-size: 22px !important;"><?php echo get_the_title(); ?></a></h3><?php echo substr($summary, 0, 140); ?><a class="btn btn-default btn-orange button red no-arrow" href="<?php echo get_the_permalink(); ?>" style="margin: 10px 0px; color: white; font-weight: 400; padding: 8px 15px;">Download Now</a>
+                <div class="col-md-4 library-thumb"><?php the_post_thumbnail(); ?></div>
+                <div class="col-md-8">
+                    <h3>
+                        <a href="<?php echo get_the_permalink(); ?>">
+                            <?php echo get_the_title(); ?>
+                        </a>
+                    </h3>
+                    <p><?php echo substr($summary, 0, 140); ?></p>
+                    <a class="btn btn-default btn-orange button red no-arrow" href="<?php echo get_the_permalink(); ?>" style="margin: 10px 0px; color: white; font-weight: 400; padding: 8px 15px;">Download Now</a>
                 </div>
             </div>
 
@@ -62,13 +69,26 @@
             <div class="row library-item">
                 <div class="col-md-4 library-thumb"><?php the_post_thumbnail(); ?></div>
                 <div class="col-md-8">
-                    <h3><a href="<?php echo get_the_permalink(); ?>" style="font-size: 22px !important;"><?php echo get_the_title(); ?></a></h3><?php echo substr($summary, 0, 140); ?>...<br /><a class="btn btn-default btn-orange button red no-arrow" href="<?php echo get_the_permalink(); ?>" style="margin: 10px 0px; color: white; font-weight: 400; padding: 8px 15px;">Download Now</a>
+                    <h3>
+                        <a href="<?php echo get_the_permalink(); ?>">
+                            <?php echo get_the_title(); ?>
+                        </a>
+                    </h3>
+                    <p><?php echo substr($summary, 0, 140); ?></p>
+                    <a class="btn btn-default btn-orange button red no-arrow" href="<?php echo get_the_permalink(); ?>" style="margin: 10px 0px; color: white; font-weight: 400; padding: 8px 15px;">Download Now</a>
                 </div>
             </div>
         <?php } else { ?>
             <div class="row library-item">
-                <div class="col-md-12">
-                    <h3><a href="<?php echo get_the_permalink(); ?>" style="font-size: 22px !important;"><?php echo get_the_title(); ?></a></h3><?php echo substr($summary, 0, 140); ?>...<br /><a class="btn btn-default btn-orange button red no-arrow" href="<?php echo get_the_permalink(); ?>" style="margin: 10px 0px; color: white; font-weight: 400; padding: 8px 15px;">Download Now</a>
+                <div class="col-md-4 library-thumb"><div class='image-spacer'></div></div>
+                <div class="col-md-8">
+                    <h3>
+                        <a href="<?php echo get_the_permalink(); ?>">
+                            <?php echo get_the_title(); ?>
+                        </a>
+                    </h3>
+                    <p><?php echo substr($summary, 0, 140); ?></p>
+                    <a class="btn btn-default btn-orange button red no-arrow" href="<?php echo get_the_permalink(); ?>" style="margin: 10px 0px; color: white; font-weight: 400; padding: 8px 15px;">Download Now</a>
                 </div>
             </div>
         <?php }  ?>

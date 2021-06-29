@@ -8,8 +8,14 @@ body:not(.home) {
   .hpf-box img {
     width: 100%;
   }
+  .portfolio-content {
+    background: transparent !important;
+    border: none !important;
+  }
 }
-
+body:not(.home) .navigation > ul {
+  margin-bottom: 125px;
+}
 .leader-emblem {
   padding-left: 0 !important;
   padding-right: 0 !important;
@@ -661,7 +667,9 @@ body:not(.home) {
   margin-top: 100px !important;
 }
 
-.page-template-template-whitepapers {
+.page-template-template-whitepapers,
+.page-template-template-guides,
+.page-template-template-webinar {
   .media-boxes-search {
     @include searchbar;
   }
@@ -718,12 +726,125 @@ body:not(.home) {
   }
 }
 
-.page-template-template-guides {
-  h3 a {
-    color: #272727;
-    font-weight: 600;
-    font-size: 32px;
-    margin-bottom: 30px;
-    text-transform: none !important;
+.page-template-template-guides,
+.page-template-template-webinar {
+  h3 {
+    margin-top: 30px !important;
+    a {
+      color: #272727;
+      font-weight: 600;
+      font-size: 28px;
+      margin-bottom: 30px;
+      text-transform: none !important;
+    }
+  }
+  .btn {
+    @include button;
+  }
+  .library-item {
+    align-items: flex-start;
+    padding-bottom: 50px;
+    position: relative;
+    &::after {
+      width: calc(100% - 15px);
+      content: "";
+      background: #e7e7e7;
+      height: 2px;
+      position: absolute;
+      bottom: 0;
+      left: 15px;
+    }
+    margin-bottom: 50px;
+  }
+  .image-spacer {
+    width: 100%;
+    height: 100%;
+    background: #e7e7e7;
+  }
+  .col-md-8 {
+    @media (max-width: 768px) {
+      margin-left: 15px !important;
+    }
+  }
+  .library-thumb {
+    img,
+    .image-spacer {
+      height: 180px;
+      object-fit: cover;
+      object-position: center;
+    }
+  }
+  div#wp-filter-root {
+    margin-top: 50px !important;
+    margin-bottom: 60px !important;
+  }
+}
+
+.single-library {
+  @include form;
+  .col-md-7 {
+    padding-right: 30px;
+  }
+  .col-md-5 {
+    background-color: #153355 !important;
+    margin-top: 0 !important;
+    @media (max-width: 576px) {
+      margin: 20px 0 !important;
+    }
+  }
+  h4 {
+    color: white !important;
+    text-transform: uppercase !important;
+    font-family: "Rubik", sans-serif !important;
+    font-size: 15px !important;
+    letter-spacing: 1px;
+    margin-top: 10px !important;
+    line-height: normal !important;
+  }
+  .gform_wrapper {
+    background-color: #153355 !important;
+    padding-left: 30px !important;
+    padding-top: 10px !important;
+    margin-bottom: 10px !important;
+    input[type="submit"] {
+      margin-top: 15px !important;
+    }
+  }
+  .gform_confirmation_message {
+    color: white;
+    padding: 0 30px;
+  }
+}
+
+.sidebar-offer {
+  h5 {
+    text-transform: uppercase !important;
+    font-family: "Rubik", sans-serif !important;
+    font-size: 14px !important;
+    letter-spacing: 1px;
+    margin-top: 10px !important;
+    line-height: normal !important;
+    margin-bottom: 15px !important;
+  }
+  .hpf-box img {
+    border-bottom: 10px solid #f06944;
+    margin-bottom: 20px;
+  }
+  .btn {
+    margin-top: 10px;
+  }
+  p {
+    font-size: 16px !important;
+  }
+  strong {
+    font-size: 18px !important;
+    display: block;
+  }
+}
+
+.single-post {
+  @include form;
+  .btn {
+    @include button;
   }
 }
