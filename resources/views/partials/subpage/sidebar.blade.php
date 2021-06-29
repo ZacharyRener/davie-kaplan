@@ -14,14 +14,14 @@
             {!! the_field('additional_sidebar_content') !!}
         @endif
 
+        @if(get_post_type() == "post")
+            @include('partials.subpage.blog-sidebar')
+        @endif
+
         <div class='offer-spacer'></div>
         <div class='offer-container'>
             @include('partials.subpage.offers')
         </div>
-
-        @if(get_post_type() == "post")
-            @include('partials.subpage.blog-sidebar')
-        @endif
 
     </aside>
 </div>

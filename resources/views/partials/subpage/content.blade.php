@@ -6,10 +6,13 @@
                 <h1>{!! get_the_title() !!}</h1>
             @endif
             @if(get_post_type() == 'post')
-                <p class='author'>{{ get_the_date() }}</p>
+                <p class='author'>{{ get_the_date() }}<span class='divider'>|</span>{{get_the_author()}}</p>
+                @if(has_post_thumbnail())
+                {!! get_the_post_thumbnail() !!}
+                @endif
             @endif
             <span class='wrapper'>@php the_content(); @endphp</span>
-            @if(get_post_type() == 'post')
+            @if(get_post_type() == 'post' || get_post_type() == 'news')
                 @php
                     $cat_string = '';
                     $post_cats = wp_get_post_categories(get_the_ID());
@@ -24,10 +27,9 @@
                 <div class='categories'>
                     <strong>Categories: </strong>{!! $cat_string !!}
                 </div>
-
-                <strong class='share'>Share</strong>
             @endif
             @if(get_post_type() == 'news' || get_post_type() == 'post')
+                <strong class='share'>Share</strong>
                 {!! do_shortcode('[addtoany]') !!}
             @endif
         @endwhile
