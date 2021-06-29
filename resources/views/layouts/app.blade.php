@@ -3,8 +3,9 @@
   @include('partials.head')
   <body @php body_class() @endphp>
     @php do_action('get_header') @endphp
-    <script src="{{ get_stylesheet_directory_uri() }}/assets/dist/main.js"></script>
     @include('partials.dependencies')
+    <script src="{{ get_stylesheet_directory_uri() }}/assets/dist/main.js"></script>
+    
     @include('partials.header')
     <div class="wrap" role="document">
       <div class="content">
