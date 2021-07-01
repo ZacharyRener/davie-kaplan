@@ -21,7 +21,7 @@
           <nav id="utility">
             <?php
               wp_nav_menu( array(
-                'menu'              => 3,
+                'menu'              => 2,
                 'menu_class'        => "d-flex flex-row",
                 'container_class'   => "",
                 'depth'             => 3,
@@ -72,7 +72,7 @@
       <section id="mobile-menu" class="hidden">
         <?php
           wp_nav_menu( array(
-            'menu'              => 2,
+            'menu'              => 10,
             'menu_class'        => "",
             'container_class'   => "",
             'depth'             => 3,

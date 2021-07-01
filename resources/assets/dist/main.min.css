@@ -429,6 +429,17 @@ a.section-title-custom {
   img.site-logo {
     top: 0 !important; } }
 
+@media (max-width: 768px) {
+  .sub-menu .sub-menu {
+    display: none !important; }
+  ul#menu-mobile-navigation {
+    height: calc(100% - 100px);
+    overflow-y: scroll; }
+  #menu-mobile-navigation > .hidden {
+    display: block !important; }
+  #menu-mobile-navigation > .menu-item-has-children > .sub-menu > .hidden {
+    display: block !important; } }
+
 .home-slider .slide-txt h2 {
   font-family: "Rubik", sans-serif;
   text-transform: uppercase;
