@@ -143,4 +143,7 @@ body:not(.home) {
   .content {
     padding-top: 0 !important;
   }
+  .main-container > section > .container > .row > .col-md-8.about-body {
+    padding-bottom: 78px;
+  }
 }
