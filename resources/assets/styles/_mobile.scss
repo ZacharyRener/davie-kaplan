@@ -302,7 +302,9 @@
     min-height: unset !important;
     margin-bottom: 0 !important;
   }
-  .page-template-template-whitepapers h1 {
+  .page-template-template-whitepapers h1,
+  .page-template-template-guides h1,
+  .page-template-template-webinars h1 {
     margin-bottom: 20px !important;
   }
 
@@ -315,7 +317,8 @@
     padding-top: 10px !important;
   }
 
-  .page-template-template-whitepapers .library-thumb img {
+  .page-template-template-whitepapers .library-thumb img,
+  .page-template-template-guides .library-thumb img {
     max-height: unset !important;
     width: 100% !important;
     height: auto !important;

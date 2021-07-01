@@ -1,7 +1,10 @@
 import React, { Component } from "react";
 var base64 = require("base-64");
 
-interface AppProps {}
+interface AppProps {
+  searchText: any;
+  pageSlug: any;
+}
 interface AppState {
   posts: Array<any>;
   categories: Array<any>;
@@ -164,12 +167,20 @@ export default class WhitepaperFilters extends Component<AppProps, AppState> {
 
   handleServiceClick(categoryId: number, categoryName: string) {
     //localStorage.setItem("service", categoryName);
-    document.location.href = "/insights/whitepapers/?service=" + categoryId;
+    if (categoryId == -1) {
+      document.location.href = this.props.pageSlug;
+    } else {
+      document.location.href = this.props.pageSlug + "/?service=" + categoryId;
+    }
   }
 
   handleIndustryClick(categoryId: number, categoryName: string) {
     //localStorage.setItem("industry", categoryName);
-    document.location.href = "/insights/whitepapers/?industry=" + categoryId;
+    if (categoryId == -1) {
+      document.location.href = this.props.pageSlug;
+    } else {
+      document.location.href = this.props.pageSlug + "/?industry=" + categoryId;
+    }
   }
 
   handleCategoryRemoval() {
@@ -193,7 +204,7 @@ export default class WhitepaperFilters extends Component<AppProps, AppState> {
     if (e == "Enter") {
       //localStorage.setItem("search", searchQuery);
       document.location.href =
-        "/insights/whitepapers/?searchQuery=" + searchQuery;
+        this.props.pageSlug + "/?searchQuery=" + searchQuery;
     }
   }
 
@@ -228,7 +239,7 @@ export default class WhitepaperFilters extends Component<AppProps, AppState> {
               }}
               type="text"
               id="search"
-              placeholder="Search Whitepapers"
+              placeholder={this.props.searchText}
               default-value=""
             />
             <span className="media-boxes-clear fa fa-close"></span>

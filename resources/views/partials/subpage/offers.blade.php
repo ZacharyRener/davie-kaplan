@@ -18,7 +18,7 @@ if(have_rows('offers_select')):
 
 
     <div class="portfolio-content-wrapper sidebar-box sidebar-offer" style="text-align: <?php echo $offer_alignment; ?>;">
-        
+        <h5><?php the_field('offer_title', $offer_id); ?></h5>
         <div class="portfolio-content" style="background:<?php the_sub_field('s2_offer_background_color'); ?>; border: solid 2px <?php echo $offer_border; ?>;">
       <?php 
         if ( get_field('split_image', $offer_id) ){ 
@@ -34,10 +34,16 @@ if(have_rows('offers_select')):
              ';
             ?>
         <?php } else { ?>
-        <div class="hpf-box"><a href="<?php  echo esc_html__(the_field('offer_link', $offer_id)); ?>"><img src="<?php  echo esc_html__(the_field('offer_image', $offer_id)); ?>"></a></div>
+            
+        <div class="hpf-box">
+            <a href="<?php  echo esc_html__(the_field('offer_link', $offer_id)); ?>">
+                <img src="<?php  echo esc_html__(the_field('offer_image', $offer_id)); ?>">
+            </a>
+        </div>
         <?php } ?>
-				<div style="padding: 15px;">
-                    <h5><?php the_field('offer_title', $offer_id); ?></h5>
+                            
+
+				<div>
 					<p><?php  echo esc_html__(the_field('offer_excerpt', $offer_id)); ?></p>
 					<a href="<?php  echo esc_html__(the_field('offer_link', $offer_id)); ?>" class="btn button arrow red btn-default btn-orange"><?php  echo esc_html__(the_field('offer_button_text', $offer_id)); ?></a>
 				</div>

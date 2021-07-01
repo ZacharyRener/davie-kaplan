@@ -6,7 +6,7 @@ export default class Global {
   constructor() {
     this.handleTrayMenu();
     this.handleLeftNavHover();
-    if (window.innerWidth > 768) this.makeOffersSticky();
+    //if (window.innerWidth > 768) this.makeOffersSticky();
   }
 
   handleTrayMenu() {
