@@ -530,3 +530,8 @@ a.section-title-custom {
     top: 23px;
   }
 }
+@media (width: 768px) {
+  img.site-logo {
+    top: 0 !important;
+  }
+}

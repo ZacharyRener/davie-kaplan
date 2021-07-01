@@ -425,6 +425,10 @@ a.section-title-custom {
     height: 40px;
     top: 23px; } }
 
+@media (width: 768px) {
+  img.site-logo {
+    top: 0 !important; } }
+
 .home-slider .slide-txt h2 {
   font-family: "Rubik", sans-serif;
   text-transform: uppercase;
