@@ -420,6 +420,11 @@ a.section-title-custom {
 #header input#s::placeholder {
   font-size: 0.75rem !important; }
 
+@media (min-width: 769px) and (max-height: 500px) {
+  #header #primary-nav .site-logo {
+    height: 40px;
+    top: 23px; } }
+
 .home-slider .slide-txt h2 {
   font-family: "Rubik", sans-serif;
   text-transform: uppercase;
@@ -999,6 +1004,23 @@ section#home-offers {
     section#home-offers .team-box:nth-last-child(1) {
       margin-bottom: 50px !important; } }
 
+@media (min-width: 1201px) {
+  #home-offers .col-sm-12.row.b-t-p-section {
+    justify-content: center;
+    align-items: center;
+    padding-right: 0 !important;
+    margin-right: 0 !important;
+    margin-left: 0 !important;
+    padding-left: 0 !important; }
+  #home-offers .col-sm-12.col-md-4.team-box {
+    padding: 0 !important; }
+  #home-offers .col-sm-12.col-md-4.team-box:nth-child(1) {
+    padding-right: 30px !important; }
+  #home-offers .col-sm-12.col-md-4.team-box:nth-child(2) {
+    padding-right: 15px !important; }
+  #home-offers .col-sm-12.col-md-4.team-box:nth-child(3) {
+    padding-left: 15px !important; } }
+
 .clients-section {
   padding-bottom: 50px; }
   .clients-section .owl-wrapper-outer {
@@ -1068,6 +1090,17 @@ section.body-section.seo-copy {
     section.body-section.seo-copy {
       padding-left: 30px !important;
       padding-right: 30px !important; } }
+
+@media (max-width: 575px) {
+  body.home .col-md-4.col-sm-12.team-box {
+    padding-left: 0 !important;
+    padding-right: 0 !important; }
+  body.home .col-sm-12.row.b-t-p-section {
+    margin-right: 0 !important;
+    margin-left: 0 !important;
+    padding: 0 !important; }
+  body.home .col-sm-12.col-xs-12 {
+    padding: 0 !important; } }
 
 .pathways {
   margin-bottom: 125px; }

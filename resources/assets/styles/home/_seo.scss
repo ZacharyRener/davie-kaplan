@@ -47,3 +47,22 @@ section.body-section.seo-copy {
     background-position: bottom center !important;
   }
 }
+
+body.home {
+  @media (max-width: 575px) {
+    .col-md-4.col-sm-12.team-box {
+      padding-left: 0 !important;
+      padding-right: 0 !important;
+    }
+
+    .col-sm-12.row.b-t-p-section {
+      margin-right: 0 !important;
+      margin-left: 0 !important;
+      padding: 0 !important;
+    }
+
+    .col-sm-12.col-xs-12 {
+      padding: 0 !important;
+    }
+  }
+}
