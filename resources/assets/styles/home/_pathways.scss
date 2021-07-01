@@ -107,3 +107,27 @@
   padding-right: 0 !important;
   margin-right: 0 !important;
 }
+
+@media (min-width: 769px) {
+  .pathways .a-e-p-buttons {
+    margin-right: 0 !important;
+    margin-left: 0 !important;
+    padding-left: 0 !important;
+  }
+
+  .pathways .a-button .wrapper {
+    margin-right: 0 !important;
+  }
+
+  .pathways .a-button:nth-child(1) {
+    padding-right: 30px;
+  }
+
+  .pathways .a-button:nth-child(2) {
+    padding-right: 15px;
+  }
+
+  .pathways .a-button:nth-child(3) {
+    padding-left: 15px;
+  }
+}

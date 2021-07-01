@@ -400,6 +400,26 @@ a.section-title-custom {
     top: auto !important;
     line-height: normal !important; } }
 
+#header .top-level-nav-item > a {
+  letter-spacing: normal !important; }
+
+#header #utility-menu ul li,
+#header #utility-menu ul li a {
+  letter-spacing: normal !important;
+  font-size: 0.75rem;
+  padding: 4px 0; }
+
+#header i.fab.fa-linkedin-in {
+  color: white;
+  font-size: 14px !important; }
+
+#header #utility-menu #utility {
+  padding: 0 !important; }
+
+#header input#s,
+#header input#s::placeholder {
+  font-size: 0.75rem !important; }
+
 .home-slider .slide-txt h2 {
   font-family: "Rubik", sans-serif;
   text-transform: uppercase;
@@ -1132,6 +1152,20 @@ section.body-section.seo-copy {
 .a-e-p-buttons {
   padding-right: 0 !important;
   margin-right: 0 !important; }
+
+@media (min-width: 769px) {
+  .pathways .a-e-p-buttons {
+    margin-right: 0 !important;
+    margin-left: 0 !important;
+    padding-left: 0 !important; }
+  .pathways .a-button .wrapper {
+    margin-right: 0 !important; }
+  .pathways .a-button:nth-child(1) {
+    padding-right: 30px; }
+  .pathways .a-button:nth-child(2) {
+    padding-right: 15px; }
+  .pathways .a-button:nth-child(3) {
+    padding-left: 15px; } }
 
 #slickCarouselWrapper {
   max-width: 100%;
