@@ -1,0 +1,23 @@
+name: Command via SSH
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: pull git OPEN SSH Private Key
+        uses: garygrossgarten/github-action-ssh@release
+        with:
+          command: cd daviekaplan.mifw.co/wp-content/themes/davie-kaplan && git checkout main && git pull origin master
+          host: madeinfortworth.com
+          username: madeinfortworth
+          privateKey: ${{ secrets.PRIVATE_KEY}}
+          port: 522
+# On host machine before hand, run:
+# git config --global credential.helper store
+# Then git pull origin master and enter username and password
