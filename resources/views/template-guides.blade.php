@@ -2,6 +2,7 @@
 
 @extends('layouts.app')
 
+@section('content')
 @include('partials.subpage.header-image')
 <div class="main-container">
     <section class="about-body-section slide-up">
@@ -17,3 +18,4 @@
         </div>
     </section>
 </div>
+@endsection

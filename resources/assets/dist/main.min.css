@@ -23,6 +23,9 @@
     background-color: #f06944 !important;
     text-decoration: none !important; }
 
+body:not(.home) .content {
+  padding-top: 0 !important; }
+
 /* ============================================================== *
  * Utility Menu Colors                                            *
  * ============================================================== */
