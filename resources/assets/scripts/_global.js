@@ -1,7 +1,3 @@
-import React from "react";
-import ReactDOM from "react-dom";
-import LoadingBar from "./_loadingBar";
-
 export default class Global {
   constructor() {
     this.handleTrayMenu();
@@ -46,6 +42,13 @@ export default class Global {
               }
             }
           }
+        });
+      });
+      document.querySelectorAll(".sub-menu > li > a").forEach((pageItem) => {
+        pageItem.addEventListener("click", (e) => {
+          e.preventDefault();
+          const href = e.currentTarget.href;
+          document.location = href;
         });
       });
       if (document.querySelector("li.has-children.active .sub-menu") != null) {
