@@ -1,7 +1,7 @@
 name: Command via SSH
 
 on:
-  push:
+  push-disabled:
     branches:
       - master
 
