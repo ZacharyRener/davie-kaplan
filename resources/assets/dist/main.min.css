@@ -29,6 +29,9 @@ body:not(.home) .content {
 body:not(.home) .main-container > section > .container > .row > .col-md-8.about-body {
   padding-bottom: 78px; }
 
+aside#secondary {
+  padding-bottom: 50px; }
+
 /* ============================================================== *
  * Utility Menu Colors                                            *
  * ============================================================== */
