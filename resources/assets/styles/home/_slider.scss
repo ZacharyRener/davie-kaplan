@@ -56,3 +56,16 @@
     object-fit: cover;
   }
 }
+
+.home {
+  .banner.home-slider {
+    max-height: 815px;
+  }
+
+  .owl-slide.style1 {
+    max-height: 815px !important;
+  }
+  #slickCarouselWrapper .ontainer.for-bottom-grid {
+    bottom: -20px !important;
+  }
+}

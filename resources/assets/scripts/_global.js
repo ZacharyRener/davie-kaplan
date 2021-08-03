@@ -55,6 +55,12 @@ export default class Global {
         document.querySelector("li.has-children.active").click();
       }
     }
+    const hasClosedActivePage = document.querySelector('.navigation .has-children .sub-menu a.active') != null;
+    if(hasClosedActivePage){
+        //
+        jQuery('.navigation ul .has-children').children('.sub-menu').children('li').children('a.active').parent('li').parent('.sub-menu').toggleClass('hidden')
+        jQuery('.navigation ul .has-children').children('.sub-menu').children('li').children('a.active').parent('li').parent('.sub-menu').parent('.has-children').toggleClass('right-arrow')
+    }
   }
 
   makeOffersSticky() {

@@ -29,7 +29,7 @@
             ?>
           </nav>
           <form action="/">
-            <input id="s" name="s" placeholder="Search..." />
+            <input id="s" name="s" placeholder="Search" />
           </form>
         </section>
       </div>
@@ -72,7 +72,7 @@
       <section id="mobile-menu" class="hidden">
         <?php
           wp_nav_menu( array(
-            'menu'              => 10,
+            'menu'              => 24,
             'menu_class'        => "",
             'container_class'   => "",
             'depth'             => 3,

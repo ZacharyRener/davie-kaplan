@@ -143,7 +143,7 @@ $slide_image = !empty(get_field('slide_image'))
                     @if (!empty(get_sub_field('slide_video')))
 
                         <div class="slide-vid">
-                            <video autoplay id="owl-vid" height="100%" width="auto" muted="muted" loop >
+                            <video id="owl-vid" height="100%" width="auto" loop autoplay muted playsinline >
                                 <source src="{{ get_sub_field('slide_video') }}" type="video/mp4" >
                             </video>
                         </div>

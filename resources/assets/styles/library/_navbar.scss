@@ -314,6 +314,9 @@ nav#primary {
 
 .top-level-nav-item > a {
   color: #3d3d3d;
+  &:hover {
+    color: #f06944 !important;
+  }
   padding: 0 20px;
   padding-bottom: 15px;
   text-decoration: none;
@@ -397,7 +400,6 @@ nav#primary {
 .top-level-nav-item > a {
   text-decoration: none;
   &:hover {
-    color: inherit !important;
     text-decoration: none !important;
   }
 }
@@ -506,7 +508,7 @@ a.section-title-custom {
   #utility-menu ul li,
   #utility-menu ul li a {
     letter-spacing: normal !important;
-    font-size: 0.75rem;
+    font-size: 14px !important;
     padding: 4px 0;
   }
 
@@ -521,7 +523,7 @@ a.section-title-custom {
 
   input#s,
   input#s::placeholder {
-    font-size: 0.75rem !important;
+    font-size: 14px !important;
   }
 }
 @media (min-width: 769px) and (max-height: 500px) {
@@ -542,7 +544,7 @@ a.section-title-custom {
   }
 
   ul#menu-mobile-navigation {
-    height: calc(100% - 100px);
+    height: calc(100% - 200px);
     overflow-y: scroll;
   }
 
@@ -552,4 +554,32 @@ a.section-title-custom {
   #menu-mobile-navigation > .menu-item-has-children > .sub-menu > .hidden {
     display: block !important;
   }
+}
+
+section#primary-nav {
+  border-bottom: 1px solid #e7e7e7;
+}
+
+.footer-row-one::after {
+  content: "";
+  width: 100vw;
+  height: 1px;
+  background: #585858;
+  position: absolute;
+  bottom: -17px;
+}
+
+.footer-row-one {
+  position: relative;
+  margin-bottom: 50px !important;
+}
+
+footer .container {
+  overflow-x: hidden;
+}
+
+footer.content-info p,
+footer.content-info a {
+  font-family: "Rubik", sans-serif !important;
+  font-weight: 300 !important;
 }

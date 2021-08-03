@@ -69,7 +69,7 @@ class App extends Controller
         $libraryParentId = 480;
         $newsParentId = 480;
         $projectParentId = 480;
-        $postParentId = 484;
+        $postParentId = 519;
 
         $parentId = wp_get_post_parent_id(get_the_ID()) == 0
             ? get_the_ID() 
@@ -106,8 +106,18 @@ class App extends Controller
         $projectParentId = 735;
         $postParentId = 519;
 
-        $parentId = wp_get_post_parent_id(get_the_ID()) == 0 ?
-            get_the_ID() : wp_get_post_parent_id(get_the_ID());
+        $postDoesntHaveParent = wp_get_post_parent_id(get_the_ID()) == 0;
+        if($postDoesntHaveParent){
+            $parentId = get_the_ID();
+        } else {
+            $parentDoesntHaveParent = wp_get_post_parent_id(wp_get_post_parent_id(get_the_ID())) == 0;
+            if($parentDoesntHaveParent) {
+                $parentId = wp_get_post_parent_id(get_the_ID());
+            } else {
+                $parentId = wp_get_post_parent_id(wp_get_post_parent_id(get_the_ID()));
+            }
+            
+        }
 
         if(get_post_type() == "leadership")
             $parentId = $leadershipParentId;

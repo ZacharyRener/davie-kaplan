@@ -11,7 +11,7 @@ $leadershipParentId = 483;
 $libraryParentId = 483;
 $newsParentId = 483;
 $projectParentId = 483;
-$postParentId = 483;
+$postParentId = 519;
 
 if(get_post_type() == "leadership")
     $parentId = $leadershipParentId;

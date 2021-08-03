@@ -360,15 +360,18 @@ export default class Blog extends Component<AppProps, AppState> {
                 <div className="imageSpacer" />
               );
             };
-
-            const date = new Date(post.date).toISOString().slice(0, 10);
+    
+            let date = new Date(post.date).toLocaleString('default', { month: 'long', day: '2-digit', year: 'numeric' });
+            // @ts-ignore
+            const formattedDate = date;
+            console.log("Date here!", formattedDate);
             //console.log(post);
             //console.log(id);
             return (
               <div className="col-md-4 post" key={id}>
                 {image()}
                 <div className="post-footer">
-                  <div className="date">{date}</div>
+                  <div className="date">{formattedDate}</div>
                 </div>
                 <a href={post.link}>{post.title.rendered}</a>
                 <div

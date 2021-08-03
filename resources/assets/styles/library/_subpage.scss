@@ -111,7 +111,6 @@ aside ul li {
 
 @media (min-width: 768px) {
   .sub-menu a {
-    font-family: "Open Sans" !important;
     /* color: #a7a7a7 !important; */
     font-size: 14px !important;
     line-height: 19px !important;
@@ -307,6 +306,7 @@ body:not(.home) {
       color: #494949;
       font-size: 15px;
       margin-bottom: 0;
+        text-align: left !important;
     }
   }
 }
@@ -553,6 +553,9 @@ body:not(.home) {
 
   .post a {
     color: #272727 !important;
+    &:hover {
+        color: #f06944 !important;
+    }
     font-weight: 400;
     font-weight: 600;
     font-size: 17px;

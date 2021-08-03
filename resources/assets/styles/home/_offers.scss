@@ -12,6 +12,10 @@ section#home-offers {
     letter-spacing: 0.8px;
     margin-bottom: 20px;
   }
+  img { 
+      height: 230px !important;
+      object-fit: cover;
+  }
   .team-box > h5 {
     margin-top: 0;
     margin-bottom: 0;
@@ -46,6 +50,9 @@ section#home-offers {
       margin-top: 25px;
       display: block;
       color: white;
+      &:hover {
+          color: #fbc84d !important;
+      }
       margin: 0;
     }
     ul {
@@ -181,4 +188,8 @@ section#home-offers {
       padding-left: 15px !important;
     }
   }
+}
+
+.team-box:nth-child(1) span, .team-box:nth-child(2) span {
+    height: 105px;
 }

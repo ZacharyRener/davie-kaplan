@@ -58,6 +58,7 @@
       }
     }
   }
+
   .gradient-overlay {
     background: linear-gradient(
       19deg,
@@ -66,6 +67,7 @@
       rgba(255, 255, 255, 1) 31%,
       rgba(255, 255, 255, 0) 100%
     );
+
     width: 100%;
     height: 100%;
     position: absolute;
@@ -74,12 +76,18 @@
     z-index: 0;
     background-repeat: no-repeat;
     background-size: 100% 300px;
-    &:hover {
-      background-position-y: -48px;
-    }
+
     transition: $transition;
   }
 
+  .wrapper {
+    &:hover .animating-arrow {
+      width: 100%;
+    }
+    &:not(:hover) .animating-arrow {
+      width: 35%;
+    }
+  }
   .animating-arrow {
     &:not(.hover) {
       width: 35%;
@@ -129,5 +137,63 @@
 
   .pathways .a-button:nth-child(3) {
     padding-left: 15px;
+  }
+}
+
+.pathways {
+  .wrapper {
+    position: relative;
+  }
+
+  .wrapper::before {
+    transition: $transition;
+  }
+
+  .wrapper:hover::before {
+    content: "";
+    opacity: 1;
+    background-image: url(http://daviekaplan.hingedev.com/wp-content/uploads/2021/08/griddot.png);
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 2;
+    background-size: 50% auto !important;
+    background-repeat: no-repeat;
+    background-position: top right;
+  }
+
+  .wrapper::before {
+    content: "";
+    opacity: 0;
+    background-image: url(http://daviekaplan.hingedev.com/wp-content/uploads/2021/08/griddot.png);
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 2;
+    background-size: 50% auto !important;
+    background-repeat: no-repeat;
+    background-position: top right;
+  }
+  .wrapper:hover .gradient-overlay {
+    background-position-y: -48px;
+  }
+  .a-button .wrapper > a {
+    background-position: bottom right !important;
+  }
+
+  .a-button:nth-child(1) .wrapper > a {
+    background-position: bottom left !important;
+  }
+}
+
+@media (max-width: 575px) {
+  .pathways .wrapper .content {
+    max-width: 260px;
+    font-size: 27px !important;
+    line-height: normal !important;
   }
 }
