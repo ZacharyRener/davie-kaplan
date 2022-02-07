@@ -32,6 +32,88 @@ body:not(.home) .main-container > section > .container > .row > .col-md-8.about-
 aside#secondary {
   padding-bottom: 50px; }
 
+section#home-offers .blog-box a.button:hover {
+  color: #fbc84d !important; }
+
+a.sub-menu-link:hover {
+  color: #fbc84d !important; }
+
+.page-template-template-news-events i.fa.fa-angle-up {
+  margin-left: 10px; }
+
+.search h1 {
+  margin-bottom: 0 !important; }
+
+.noImage img {
+  object-fit: contain !important;
+  background: #eee;
+  padding: 50px; }
+
+#fun-facts h2 {
+  margin-bottom: 0 !important; }
+
+@media (max-width: 768px) {
+  #gform_wrapper_3 input {
+    width: 100% !important; }
+  #header #primary-nav #mobile-menu ul:not(.sub-menu) li {
+    text-align: left !important; }
+  ul.sub-menu {
+    display: none !important; }
+  .menu-item-has-children:hover > ul.sub-menu {
+    display: block !important; }
+  ul#menu-mobile-navigation {
+    /* width: 100%; */ }
+  .menu-mobile-navigation-container {
+    width: 80%; }
+  #header #primary-nav #mobile-menu ul.sub-menu {
+    left: 0;
+    padding-left: 0 !important; }
+  #header #primary-nav #mobile-menu ul a {
+    padding-left: 0; }
+  .menu-item-has-children .menu-item {
+    margin-bottom: 10px !important; }
+  #header #primary-nav #mobile-menu ul a {
+    padding: 0 !important; }
+  #menu-mobile-navigation > .menu-item-has-children > a::after {
+    content: "\f0d7";
+    margin-left: 10px;
+    font-family: "Font Awesome 5 Pro";
+    font-weight: 600; }
+  #menu-mobile-navigation > .menu-item-has-children:hover > a::after {
+    content: "\f0d8"; }
+  #menu-mobile-navigation > .menu-item-has-children > a {
+    line-height: 19px; }
+  #menu-mobile-navigation > .menu-item {
+    margin-bottom: 30px !important; } }
+
+.template-news-events .card {
+  margin-bottom: 40px; }
+
+.page-template-template-blog .pagination-custom span {
+  font-size: 15px !important;
+  padding: 0 7px !important; }
+
+span.secondHalf {
+  padding: 0 !important; }
+
+.pagination-custom {
+  flex-wrap: nowrap !important; }
+
+.custom-cta {
+  padding-top: 50px !important;
+  padding-left: 120px !important;
+  padding-right: 100px !important; }
+
+.custom-cta img {
+  object-fit: contain !important;
+  background: #153355; }
+
+.custom-cta a {
+  border: none !important; }
+
+.custom-cta .wp-block-column {
+  flex-basis: 100% !important; }
+
 /* ============================================================== *
  * Utility Menu Colors                                            *
  * ============================================================== */
@@ -472,6 +554,65 @@ footer.content-info p, footer.content-info body:not(.home) .main-container .abou
 footer.content-info a {
   font-family: "Rubik", sans-serif !important;
   font-weight: 300 !important; }
+
+header .section {
+  position: relative; }
+
+header .sub-menu {
+  position: absolute;
+  left: calc(100% + 1px);
+  background: white;
+  width: 100%;
+  top: 0;
+  height: auto;
+  padding: 30px 30px;
+  padding-top: 8px !important;
+  background: #494949 !important; }
+
+header a.sub-menu-link {
+  padding-bottom: 15px !important;
+  padding-top: 15px;
+  color: white !important;
+  color: white;
+  text-decoration: none;
+  font-size: 1rem !important;
+  font-weight: 400;
+  letter-spacing: normal !important;
+  text-transform: none;
+  font-family: "Rubik", sans-serif; }
+
+header .sub-menu {
+  display: none; }
+
+header .section:hover .sub-menu {
+  display: block !important; }
+
+header a.sub-menu-link:nth-last-child(1) {
+  border-bottom: none !important;
+  padding-bottom: 0 !important; }
+
+header .dropdown-menu-custom {
+  padding-left: 0 !important;
+  padding-right: 0 !important; }
+
+header .section {
+  padding-left: 40px;
+  padding-right: 40px;
+  width: 270px; }
+
+.imageSpacer {
+  background-image: url(/wp-content/uploads/2021/09/imageSpacerBg.jpg);
+  background-size: contain;
+  background-position: center; }
+
+.col-md-4.post {
+  padding-bottom: 50px; }
+
+.page-template-template-blog .pagination-custom {
+  flex-wrap: wrap; }
+
+.page-template-template-leadership .leader-emblem {
+  height: 403px; }
 
 .home-slider .slide-txt h2 {
   font-family: "Rubik", sans-serif;
@@ -1654,8 +1795,8 @@ body:not(.home) .main-container {
     margin-bottom: 60px;
     border-top: 2px solid #e7e7e7; }
   body:not(.home) .main-container .about-body ul {
-    padding-left: 0;
-    list-style-position: inside; }
+    padding-left: 20px;
+    list-style-position: outside; }
   body:not(.home) .main-container .about-body li {
     margin-bottom: 10px; }
     body:not(.home) .main-container .about-body li::marker {
@@ -3205,7 +3346,7 @@ li.has-children.right-arrow > a::after {
   .page-id-782 div#gform_wrapper_1 {
     padding-top: 30px; }
   ul.sub-menu {
-    display: block !important;
+    display: block;
     padding: 0 !important;
     top: 0 !important; }
   ul.sub-menu a {

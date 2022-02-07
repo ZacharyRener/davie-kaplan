@@ -65,7 +65,7 @@
 
                       <script>
         setTimeout(function(){
-            jQuery('.page-id-227 button.btn.btn-link.btn-default').click(function(e){
+            jQuery('.post-type-archive-news button.btn.btn-link.btn-default').click(function(e){
             
                 var icon = e.currentTarget.children[0].children[0];
                 console.log(icon)
@@ -78,6 +78,19 @@
                 }
                 
             });
+            document.querySelectorAll('.card-header button').forEach(button => {
+                button.addEventListener('click', e => {
+                    let arrow = e.currentTarget.children[0].children[0];
+                    if(arrow.classList.contains('fa-angle-down')){
+                        arrow.classList.remove('fa-angle-down');    
+                        arrow.classList.add('fa-angle-up');
+                    } else if(arrow.classList.contains('fa-angle-up')){
+                        arrow.classList.remove('fa-angle-up');    
+                        arrow.classList.add('fa-angle-down');
+                    }
+                    
+                })
+            })
             jQuery('#heading2021 button').click();
         }, 1000);
     </script>

@@ -77,9 +77,10 @@ add_action( 'init', function(){
 		'show_in_nav_menus'     => true,
 		'can_export'            => true,
 		'has_archive'           => true,		
-		'exclude_from_search'   => false,
+		'exclude_from_search'   => true,
 		'publicly_queryable'    => true,
 		'capability_type'       => 'page',
+        'rewrite' => array('with_front' => false),
 	);
 	register_post_type( 'offers', $args );
 
@@ -131,6 +132,7 @@ add_action( 'init', function(){
 		'exclude_from_search'   => false,
 		'publicly_queryable'    => true,
 		'capability_type'       => 'page',
+        'rewrite' => array('with_front' => false),
 	);
 	register_post_type( 'project', $args );
 
@@ -181,6 +183,7 @@ add_action( 'init', function(){
 		'exclude_from_search'   => false,
 		'publicly_queryable'    => true,
 		'capability_type'       => 'page',
+        'rewrite' => array('with_front' => false),
 	);
 	register_post_type( 'leadership', $args );
 
@@ -244,6 +247,8 @@ add_action( 'init', function(){
 		'publicly_queryable'    => true,
 		'capability_type'       => 'page',
         'show_in_rest'          => true,
+        'rewrite' => array('slug'=>'about/news-event','with_front' => false),
+        'has_archive' => false,
 	);
 	register_post_type( 'news', $args );
 
@@ -372,6 +377,8 @@ add_action( 'init', function(){
 		'exclude_from_search'   => false,
 		'publicly_queryable'    => true,
 		'capability_type'       => 'page',
+        'rewrite' => array('slug'=>'resources','with_front'=>false),
+        'has_archive' => false,
 	);
 	register_post_type( 'library', $args );
 
@@ -478,6 +485,56 @@ add_action( 'init', function(){
     );
 
     register_taxonomy( 'blog_service', array( 'post' ), $args );
+    //service-areas
+    $labels = array(
+        'name'              => _x( 'Service Areas', 'taxonomy general name', 'textdomain' ),
+        'singular_name'     => _x( 'Service Area', 'taxonomy singular name', 'textdomain' ),
+        'search_items'      => __( 'Search Service Areas', 'textdomain' ),
+        'all_items'         => __( 'All Service Areas', 'textdomain' ),
+        'parent_item'       => __( 'Parent Service Area', 'textdomain' ),
+        'parent_item_colon' => __( 'Parent Service Area:', 'textdomain' ),
+        'edit_item'         => __( 'Edit Service Area', 'textdomain' ),
+        'update_item'       => __( 'Update Service Area', 'textdomain' ),
+        'add_new_item'      => __( 'Add New Service Area', 'textdomain' ),
+        'new_item_name'     => __( 'New Service Area Name', 'textdomain' ),
+        'menu_name'         => __( 'Service Area', 'textdomain' ),
+    );
+    $args = array(
+        'hierarchical'      => true,
+        'labels'            => $labels,
+        'show_ui'           => true,
+        'show_admin_column' => true,
+        'query_var'         => true,
+        'rewrite'           => array( 'slug' => 'service-areas' ),
+        'show_in_rest'      => true
+    );
+
+    register_taxonomy( 'service-area', array( 'team-members', 'leadership' ), $args );
+
+    $labels = array(
+        'name'              => _x( 'Positions', 'taxonomy general name', 'textdomain' ),
+        'singular_name'     => _x( 'Position', 'taxonomy singular name', 'textdomain' ),
+        'search_items'      => __( 'Search Positions', 'textdomain' ),
+        'all_items'         => __( 'All Positions', 'textdomain' ),
+        'parent_item'       => __( 'Parent Position', 'textdomain' ),
+        'parent_item_colon' => __( 'Parent Position:', 'textdomain' ),
+        'edit_item'         => __( 'Edit Position', 'textdomain' ),
+        'update_item'       => __( 'Update Position', 'textdomain' ),
+        'add_new_item'      => __( 'Add New Position', 'textdomain' ),
+        'new_item_name'     => __( 'New Position Name', 'textdomain' ),
+        'menu_name'         => __( 'Position', 'textdomain' ),
+    );
+    $args = array(
+        'hierarchical'      => true,
+        'labels'            => $labels,
+        'show_ui'           => true,
+        'show_admin_column' => true,
+        'query_var'         => true,
+        'rewrite'           => array( 'slug' => 'positions' ),
+        'show_in_rest'      => true
+    );
+
+    register_taxonomy( 'positions', array( 'team-members', 'leadership' ), $args );
 
     $labels = array(
         'name'              => _x( 'Industrys', 'taxonomy general name', 'textdomain' ),
@@ -504,6 +561,112 @@ add_action( 'init', function(){
     );
 
     register_taxonomy( 'blog_industry', array( 'post' ), $args );
+
+    $labels = array(
+		'name'                  => _x( 'Events', 'Post Type General Name', 'jtptheme' ),
+		'singular_name'         => _x( 'Event', 'Post Type Singular Name', 'jtptheme' ),
+		'menu_name'             => __( 'Events', 'jtptheme' ),
+		'name_admin_bar'        => __( 'Events', 'jtptheme' ),
+		'archives'              => __( 'Event Archives', 'jtptheme' ),
+		'attributes'            => __( 'Event Attributes', 'jtptheme' ),
+		'parent_item_colon'     => __( 'Parent Event:', 'jtptheme' ),
+		'all_items'             => __( 'All Events', 'jtptheme' ),
+		'add_new_item'          => __( 'Add New Event', 'jtptheme' ),
+		'add_new'               => __( 'Add New Event', 'jtptheme' ),
+		'new_item'              => __( 'New Event', 'jtptheme' ),
+		'edit_item'             => __( 'Edit Event', 'jtptheme' ),
+		'update_item'           => __( 'Update Event', 'jtptheme' ),
+		'view_item'             => __( 'View Event', 'jtptheme' ),
+		'view_items'            => __( 'View Event', 'jtptheme' ),
+		'search_items'          => __( 'Search Event', 'jtptheme' ),
+		'not_found'             => __( 'Not found', 'jtptheme' ),
+		'not_found_in_trash'    => __( 'Not found in Trash', 'jtptheme' ),
+		'featured_image'        => __( 'Featured Image', 'jtptheme' ),
+		'set_featured_image'    => __( 'Set featured image', 'jtptheme' ),
+		'remove_featured_image' => __( 'Remove featured image', 'jtptheme' ),
+		'use_featured_image'    => __( 'Use as featured image', 'jtptheme' ),
+		'insert_into_item'      => __( 'Insert into Event', 'jtptheme' ),
+		'uploaded_to_this_item' => __( 'Uploaded to this Event', 'jtptheme' ),
+		'items_list'            => __( 'Items list', 'jtptheme' ),
+		'items_list_navigation' => __( 'Items list navigation', 'jtptheme' ),
+		'filter_items_list'     => __( 'Filter items list', 'jtptheme' ),
+	);
+	$args = array(
+		'label'                 => __( 'Event', 'jtptheme' ),
+		'description'           => __( 'Events', 'jtptheme' ),
+		'labels'                => $labels,
+		'supports'              => array( 'title'),
+		// 'taxonomies'            => array( 'category', 'post_tag' ),
+		'hierarchical'          => false,
+		'public'                => true,
+		'show_ui'               => true,
+		'show_in_menu'          => true,
+        'show_in_rest'          => true,
+		'menu_position'         => 10,
+		'show_in_admin_bar'     => true,
+		'show_in_nav_menus'     => true,
+		'can_export'            => true,
+		'has_archive'           => true,		
+		'exclude_from_search'   => false,
+		'publicly_queryable'    => true,
+		'capability_type'       => 'page',
+        'rewrite' => array('slug'=>'about/news-events','with_front' => false),
+        'has_archive' => false,
+	);
+	register_post_type( 'news-events', $args );
+
+    $labels = array(
+		'name'                  => _x( 'Team Members', 'Post Type General Name', 'jtptheme' ),
+		'singular_name'         => _x( 'Team Member', 'Post Type Singular Name', 'jtptheme' ),
+		'menu_name'             => __( 'Team Members', 'jtptheme' ),
+		'name_admin_bar'        => __( 'Team Members', 'jtptheme' ),
+		'archives'              => __( 'Team Member Archives', 'jtptheme' ),
+		'attributes'            => __( 'Team Member Attributes', 'jtptheme' ),
+		'parent_item_colon'     => __( 'Parent Team Member:', 'jtptheme' ),
+		'all_items'             => __( 'All Team Members', 'jtptheme' ),
+		'add_new_item'          => __( 'Add New Team Member', 'jtptheme' ),
+		'add_new'               => __( 'Add New Team Member', 'jtptheme' ),
+		'new_item'              => __( 'New Team Member', 'jtptheme' ),
+		'edit_item'             => __( 'Edit Team Member', 'jtptheme' ),
+		'update_item'           => __( 'Update Team Member', 'jtptheme' ),
+		'view_item'             => __( 'View Team Member', 'jtptheme' ),
+		'view_items'            => __( 'View Team Member', 'jtptheme' ),
+		'search_items'          => __( 'Search Team Member', 'jtptheme' ),
+		'not_found'             => __( 'Not found', 'jtptheme' ),
+		'not_found_in_trash'    => __( 'Not found in Trash', 'jtptheme' ),
+		'featured_image'        => __( 'Featured Image', 'jtptheme' ),
+		'set_featured_image'    => __( 'Set featured image', 'jtptheme' ),
+		'remove_featured_image' => __( 'Remove featured image', 'jtptheme' ),
+		'use_featured_image'    => __( 'Use as featured image', 'jtptheme' ),
+		'insert_into_item'      => __( 'Insert into Team Member', 'jtptheme' ),
+		'uploaded_to_this_item' => __( 'Uploaded to this Team Member', 'jtptheme' ),
+		'items_list'            => __( 'Items list', 'jtptheme' ),
+		'items_list_navigation' => __( 'Items list navigation', 'jtptheme' ),
+		'filter_items_list'     => __( 'Filter items list', 'jtptheme' ),
+	);
+	$args = array(
+		'label'                 => __( 'Team Member', 'jtptheme' ),
+		'description'           => __( 'Team Members', 'jtptheme' ),
+		'labels'                => $labels,
+		'supports'              => array( 'title', 'thumbnail', 'editor'),
+		// 'taxonomies'            => array( 'category', 'post_tag' ),
+		'hierarchical'          => false,
+		'public'                => true,
+		'show_ui'               => true,
+		'show_in_menu'          => true,
+        'show_in_rest'          => true,
+		'menu_position'         => 10,
+		'show_in_admin_bar'     => true,
+		'show_in_nav_menus'     => true,
+		'can_export'            => true,
+		'has_archive'           => true,		
+		'exclude_from_search'   => false,
+		'publicly_queryable'    => true,
+		'capability_type'       => 'page',
+        'rewrite' => array('slug'=>'about/team','with_front' => false),
+        'has_archive' => false,
+	);
+	register_post_type( 'team-members', $args );
 
 }, 0 );
 

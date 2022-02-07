@@ -5,6 +5,7 @@
         @php
 
         $imageUrl = get_the_post_thumbnail_url(get_field('featured_article'));
+        $imageUrl = empty($imageUrl) ? '/wp-content/uploads/2021/09/imageSpacerBg.jpg' : $imageUrl;
         $title = get_the_title(get_field('featured_article'));
         $date = get_the_date('', get_field('featured_article'));
         $url = get_the_permalink(get_field('featured_article'));
@@ -32,6 +33,7 @@
 
             @php
             $imageUrl = get_the_post_thumbnail_url();
+            $imageUrl = empty($imageUrl) ? '/wp-content/uploads/2021/09/imageSpacerBg.jpg' : $imageUrl;
             $title = get_the_title();
             $date = get_the_date();
             $url = get_the_permalink();

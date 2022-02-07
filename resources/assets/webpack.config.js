@@ -65,7 +65,7 @@ module.exports = {
       {
         host: "localhost",
         port: 3000,
-        proxy: "davie.kaplan",
+        proxy: "daviekaplan.hingedev.com",
         files: "../.",
       },
       {

@@ -89,6 +89,9 @@ class App extends Controller
         if(get_post_type() == "post" || get_post_type() == 'library')
             $parentId = $postParentId;   
 
+        if(is_search())
+            $parentId = $postParentId;
+
         return $parentId;
         
     }

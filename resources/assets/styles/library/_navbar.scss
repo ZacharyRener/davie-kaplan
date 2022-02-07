@@ -583,3 +583,76 @@ footer.content-info a {
   font-family: "Rubik", sans-serif !important;
   font-weight: 300 !important;
 }
+
+header .section {
+  position: relative;
+}
+
+header .sub-menu {
+  position: absolute;
+  left: calc(100% + 1px);
+  background: white;
+  width: 100%;
+  top: 0;
+  height: auto;
+  padding: 30px 30px;
+  padding-top: 8px !important;
+  background: #494949 !important;
+}
+
+header a.sub-menu-link {
+  padding-bottom: 15px !important;
+  padding-top: 15px;
+  color: white !important;
+  color: white;
+  text-decoration: none;
+  font-size: 1rem !important;
+  font-weight: 400;
+  letter-spacing: normal !important;
+  text-transform: none;
+  font-family: "Rubik", sans-serif;
+}
+
+header .sub-menu {
+  display: none;
+}
+
+header .section:hover .sub-menu {
+  display: block !important;
+}
+
+header a.sub-menu-link:nth-last-child(1) {
+  border-bottom: none !important;
+  padding-bottom: 0 !important;
+}
+
+header {
+  .dropdown-menu-custom {
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+  }
+
+  .section {
+    padding-left: 40px;
+    padding-right: 40px;
+    width: 270px;
+  }
+}
+
+.imageSpacer {
+  background-image: url(/wp-content/uploads/2021/09/imageSpacerBg.jpg);
+  background-size: contain;
+  background-position: center;
+}
+
+.col-md-4.post {
+  padding-bottom: 50px;
+}
+
+.page-template-template-blog .pagination-custom {
+  flex-wrap: wrap;
+}
+
+.page-template-template-leadership .leader-emblem {
+  height: 403px;
+}

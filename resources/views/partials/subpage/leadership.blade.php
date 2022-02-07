@@ -21,7 +21,7 @@
                 <ul class="media-boxes-drop-down-menu filters" data-id="third-filter">
                   <!--<li><a class="selected" href="#" data-filter="*">Filter By Category</a></li>-->
 	                <?php
-	                   $terms = get_terms("team-type", array( 
+	                   $terms = get_terms("positions", array( 
                         'orderby' => 'name',
                         'order'   => 'ASC',
                         ) );
@@ -60,8 +60,9 @@
                         'post_status' => 'publish',
                         'post_type'   => 'leadership',
                         'posts_per_page' => -1,
-                        'orderby'     => 'date',
+                        'orderby'     => 'meta_value',
                         'order'       => 'DESC',
+                        'meta_key' => 'lds_last_name'
                     );
 
                     $the_query = new WP_Query( $args );
@@ -72,7 +73,7 @@
         
 
                 <?php
-                $terms = get_the_terms( get_the_ID(), 'team-type' );
+                $terms = get_the_terms( get_the_ID(), 'positions' );
                             
                 if ( $terms && ! is_wp_error( $terms ) ) : 
                     $links = array();

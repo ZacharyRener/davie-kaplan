@@ -59,7 +59,7 @@
                             <?php echo get_the_title(); ?>
                         </a>
                     </h3>
-                    <p><?php echo substr($summary, 0, 140); ?></p>
+                    <p>{{ App::getSnippet(strip_tags(get_field('on_page_text')), 24) }}...</p>
                     <a class="btn btn-default btn-orange button red no-arrow" href="<?php echo get_the_permalink(); ?>" style="margin: 10px 0px; color: white; font-weight: 400; padding: 8px 15px;">Download Now</a>
                 </div>
             </div>
@@ -74,7 +74,7 @@
                             <?php echo get_the_title(); ?>
                         </a>
                     </h3>
-                    <p><?php echo substr($summary, 0, 140); ?></p>
+                    <p>{{ App::getSnippet(strip_tags(get_field('on_page_text')), 24) }}...</p>
                     <a class="btn btn-default btn-orange button red no-arrow" href="<?php echo get_the_permalink(); ?>" style="margin: 10px 0px; color: white; font-weight: 400; padding: 8px 15px;">Download Now</a>
                 </div>
             </div>
@@ -87,7 +87,7 @@
                             <?php echo get_the_title(); ?>
                         </a>
                     </h3>
-                    <p><?php echo substr($summary, 0, 140); ?></p>
+                    <p>{{ App::getSnippet(strip_tags(get_field('on_page_text')), 24) }}...</p>
                     <a class="btn btn-default btn-orange button red no-arrow" href="<?php echo get_the_permalink(); ?>" style="margin: 10px 0px; color: white; font-weight: 400; padding: 8px 15px;">Download Now</a>
                 </div>
             </div>

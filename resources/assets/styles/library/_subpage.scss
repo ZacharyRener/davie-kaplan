@@ -257,8 +257,8 @@ body:not(.home) {
     }
     .about-body {
       ul {
-        padding-left: 0;
-        list-style-position: inside;
+        padding-left: 20px;
+        list-style-position: outside;
       }
       li {
         @extend p;
@@ -306,7 +306,7 @@ body:not(.home) {
       color: #494949;
       font-size: 15px;
       margin-bottom: 0;
-        text-align: left !important;
+      text-align: left !important;
     }
   }
 }
@@ -554,7 +554,7 @@ body:not(.home) {
   .post a {
     color: #272727 !important;
     &:hover {
-        color: #f06944 !important;
+      color: #f06944 !important;
     }
     font-weight: 400;
     font-weight: 600;
