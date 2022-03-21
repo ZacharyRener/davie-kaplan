@@ -18,6 +18,7 @@ interface AppState {
   totalPosts: any;
   totalPostsArr: Array<any>;
   pages: any;
+  showAllPages: any;
 }
 
 export default class Blog extends Component<AppProps, AppState> {
@@ -39,6 +40,7 @@ export default class Blog extends Component<AppProps, AppState> {
       totalPosts: -1,
       totalPostsArr: [],
       pages: 1,
+      showAllPages: false,
     };
 
     this.loadBlogPosts = this.loadBlogPosts.bind(this);
@@ -289,10 +291,14 @@ export default class Blog extends Component<AppProps, AppState> {
     console.log("currentPage", currentPage);
     if (i == currentPage) {
       return "active";
+    } else if (i > 3 && this.state.showAllPages == false) {
+      return "hidden";
     } else {
       return "";
     }
   }
+
+  handleMorePag() {}
 
   render() {
     return (
@@ -443,16 +449,40 @@ export default class Blog extends Component<AppProps, AppState> {
           <div className="pagination-custom">
             <p className="title">Posts Navigation</p>
             {this.state.pagesArr.map((i, index) => {
-              return (
-                <span
-                  onClick={() => {
-                    this.handlePageClick(index);
-                  }}
-                  className={this.handleClassName(i)}
-                >
-                  {i}
-                </span>
-              );
+              if (index == this.state.pagesArr.length - 1) {
+                return (
+                  <span className="noSpacing">
+                    <span
+                      onClick={() => {
+                        this.handlePageClick(index);
+                      }}
+                      className={this.handleClassName(i)}
+                    >
+                      {i}
+                    </span>
+                    <span
+                      onClick={() => {
+                        this.setState({
+                          showAllPages: !this.state.showAllPages,
+                        });
+                      }}
+                    >
+                      ...
+                    </span>
+                  </span>
+                );
+              } else {
+                return (
+                  <span
+                    onClick={() => {
+                      this.handlePageClick(index);
+                    }}
+                    className={this.handleClassName(i)}
+                  >
+                    {i}
+                  </span>
+                );
+              }
             })}
             <i className="far fa-chevron-double-right"></i>
           </div>

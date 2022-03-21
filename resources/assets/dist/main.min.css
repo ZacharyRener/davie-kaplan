@@ -163,6 +163,9 @@ span.secondHalf {
 .page-template-template-blog .post-footer {
   display: none !important; }
 
+.page-template-template-blog .pagination-custom span.noSpacing {
+  padding-left: 0 !important; }
+
 /* ============================================================== *
  * Utility Menu Colors                                            *
  * ============================================================== */
