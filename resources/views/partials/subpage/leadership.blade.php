@@ -61,7 +61,7 @@
                         'post_type'   => 'leadership',
                         'posts_per_page' => -1,
                         'orderby'     => 'meta_value',
-                        'order'       => 'DESC',
+                        'order'       => 'ASC',
                         'meta_key' => 'lds_last_name'
                     );
 
@@ -108,7 +108,7 @@
                             $lsimg = wp_get_attachment_image($get_lsimg, $lsimg_size);
                         }else{
                             $lsimg = wp_get_attachment_image_src( get_post_thumbnail_id( get_the_ID() ), 'leadership-thumb-alterative' );
-                            $lsimg = $lsimg[0];
+                            $get_lsimg = $lsimg[0];
                         }
                         
 
@@ -125,7 +125,7 @@
             <div class="media-box-content">
                 <a href="<?php the_permalink(get_the_ID());?>">
                 <div class="media-box-title searchtitle"><?php echo $lsfn . ' ' . $lsln; ?>
-                    <br><?php echo get_field('lds_sm_credentials'); ?></div>
+                    <br><span class='small-creds'><?php echo get_field('lds_sm_credentials'); ?></span></div>
                 <div class="media-box-text searchtitle">
                     <?php echo $lstitle; ?><?php if($second_title) { echo '<br />' . $second_title; } ?>
                 </div>

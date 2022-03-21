@@ -10,6 +10,10 @@
                                 <img src='{{$image}}'>
                             </div>
                         @endforeach
+                    @elseif($bio_image_casual)
+                            <div class='slide oneImage'>
+                                <img src='{{$bio_image_casual}}'>
+                            </div>
                     @else
                         <div class='slide noImage'>
                             <img src='/wp-content/uploads/2021/06/DK-logo-copy.png'>
