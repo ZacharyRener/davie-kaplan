@@ -333,3 +333,12 @@ span.secondHalf {
 .sidebar-offer:nth-last-child(2):nth-child(1) {
   margin-bottom: 50px;
 }
+
+.page-template-template-blog .excerpt {
+  margin-top: 0 !important;
+  margin-bottom: 5px !important;
+}
+
+.page-template-template-blog .post-footer {
+  display: none !important;
+}

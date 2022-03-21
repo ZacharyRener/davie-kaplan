@@ -4,6 +4,7 @@ var base64 = require("base-64");
 interface AppProps {}
 interface AppState {
   posts: Array<any>;
+  pagesArr: Array<any>;
   categories: Array<any>;
   services: Array<any>;
   industries: Array<any>;
@@ -16,27 +17,7 @@ interface AppState {
   searchQuery: string;
   totalPosts: any;
   totalPostsArr: Array<any>;
-  pageOneActive: any;
-  pageTwoActive: any;
-  pageThreeActive: any;
-  pageFourActive: any;
-  pageFiveActive: any;
-  pageSixActive: any;
-  pageSevenActive: any;
-  pageEightActive: any;
-  pageNineActive: any;
-  pageTenActive: any;
-  pageElevenActive: any;
-  pageTwelveActive: any;
-  pageThirteenActive: any;
-  pageFourteenActive: any;
-  pageFifteenActive: any;
-  pageSixteenActive: any;
-  pageSeventeenActive: any;
-  pageEighteenActive: any;
-  pageNineteenActive: any;
-  pageTwentyActive: any;
-  secondHalfClass: any;
+  pages: any;
 }
 
 export default class Blog extends Component<AppProps, AppState> {
@@ -44,6 +25,7 @@ export default class Blog extends Component<AppProps, AppState> {
     super(props);
     this.state = {
       posts: [],
+      pagesArr: [],
       categories: [],
       services: [],
       industries: [],
@@ -56,27 +38,7 @@ export default class Blog extends Component<AppProps, AppState> {
       searchQuery: "",
       totalPosts: -1,
       totalPostsArr: [],
-      pageOneActive: "active",
-      pageTwoActive: "",
-      pageThreeActive: "",
-      pageFourActive: "",
-      pageFiveActive: "",
-      pageSixActive: "",
-      pageSevenActive: "",
-      pageEightActive: "",
-      pageNineActive: "",
-      pageTenActive: "",
-      pageElevenActive: "",
-      pageTwelveActive: "",
-      pageThirteenActive: "",
-      pageFourteenActive: "",
-      pageFifteenActive: "",
-      pageSixteenActive: "",
-      pageSeventeenActive: "",
-      pageEighteenActive: "",
-      pageNineteenActive: "",
-      pageTwentyActive: "",
-      secondHalfClass: "hidden",
+      pages: 1,
     };
 
     this.loadBlogPosts = this.loadBlogPosts.bind(this);
@@ -87,7 +49,6 @@ export default class Blog extends Component<AppProps, AppState> {
     this.handleCategoryClick = this.handleCategoryClick.bind(this);
     this.handleCategoryRemoval = this.handleCategoryRemoval.bind(this);
     this.handlePageClick = this.handlePageClick.bind(this);
-    this.handleMorePag = this.handleMorePag.bind(this);
     this.loadBlogPosts();
     this.loadCategories();
     this.loadIndustries();
@@ -105,7 +66,7 @@ export default class Blog extends Component<AppProps, AppState> {
 
     var formdata = new FormData();
     formdata.append("username", "Zach");
-    formdata.append("password", "08N+hy*rZll_");
+    formdata.append("password", "nullandvoid");
 
     var requestOptions: any = {
       method: "POST",
@@ -113,39 +74,66 @@ export default class Blog extends Component<AppProps, AppState> {
       redirect: "follow",
     };
 
-    fetch("/wp-json/jwt-auth/v1/token?", requestOptions)
-      .then((response) => response.json())
-      .then((result) => {
-        let headers = new Headers();
-        headers.append("Authorization", `Bearer ${result.token}`);
-
-        fetch(fetchUrl, {
-          method: "GET",
-          headers: headers,
-        })
-          .then((response) => response.json())
-          .then((data) => {
-            this.setState({ posts: this.state.posts.concat(data) });
-            this.setState({ buttonText: "View More" });
+    fetch(fetchUrl, {
+      method: "GET",
+    })
+      .then((response) => {
+        this.setState({
+          pagesArr: [],
+        });
+        this.setState({
+          pages: response.headers.get("X-WP-TotalPages"),
+        });
+        // @ts-ignore
+        for (
+          let i = 0;
+          i < // @ts-ignore
+          parseInt(response.headers.get("X-WP-TotalPages"));
+          i++
+        ) {
+          console.log("in loop now!");
+          this.setState({
+            pagesArr: [...this.state.pagesArr, i + 1],
           });
+        }
+
+        return response.json();
+      })
+      .then((data) => {
+        this.setState({ posts: this.state.posts.concat(data) });
+        this.setState({ buttonText: "View More" });
       });
   }
 
   searchThenLoadBlogPosts(searchTerm: any) {
-    let headers = new Headers();
-    headers.append(
-      "Authorization",
-      "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC9zcGlyZS5oaW5nZWRldi5jb20iLCJpYXQiOjE2MTg4NTAwMzQsIm5iZiI6MTYxODg1MDAzNCwiZXhwIjoxNjE5NDU0ODM0LCJkYXRhIjp7InVzZXIiOnsiaWQiOiIxIn19fQ.3xEJnXjDBtA6EvQyrBoUXfkVCM8OX3cza5y1Atcgi2s"
-    );
-
     const fetchUrl = `/wp-json/wp/v2/posts?per_page=${this.state.postsPerPage}&offset=${this.state.postOffset}&_embed${this.state.categoryUrl}&search=${searchTerm}`;
     console.log(fetchUrl);
 
     fetch(fetchUrl, {
       method: "GET",
-      headers: headers,
     })
-      .then((response) => response.json())
+      .then((response) => {
+        this.setState({
+          pagesArr: [],
+        });
+        this.setState({
+          pages: response.headers.get("X-WP-TotalPages"),
+        });
+        // @ts-ignore
+        for (
+          let i = 0;
+          i < // @ts-ignore
+          parseInt(response.headers.get("X-WP-TotalPages"));
+          i++
+        ) {
+          console.log("in loop now!");
+          this.setState({
+            pagesArr: [...this.state.pagesArr, i + 1],
+          });
+        }
+
+        return response.json();
+      })
       .then((data) => {
         this.setState({ posts: this.state.posts.concat(data) });
         this.setState({ buttonText: "View More" });
@@ -153,23 +141,27 @@ export default class Blog extends Component<AppProps, AppState> {
   }
 
   loadCategories() {
-    fetch("/wp-json/wp/v2/categories")
+    fetch("/wp-json/wp/v2/categories?per_page=50")
       .then((response) => response.json())
       .then((data) => {
-        this.setState({ categories: this.state.categories.concat(data) });
+        this.setState({
+          categories: this.state.categories.concat(data),
+        });
       });
   }
 
   loadIndustries() {
-    fetch("/wp-json/wp/v2/blog_industry")
+    fetch("/wp-json/wp/v2/blog_industry?per_page=50")
       .then((response) => response.json())
       .then((data) => {
-        this.setState({ industries: this.state.industries.concat(data) });
+        this.setState({
+          industries: this.state.industries.concat(data),
+        });
       });
   }
 
   loadServices() {
-    fetch("/wp-json/wp/v2/blog_service")
+    fetch("/wp-json/wp/v2/blog_service?per_page=50")
       .then((response) => response.json())
       .then((data) => {
         this.setState({ services: this.state.services.concat(data) });
@@ -277,27 +269,6 @@ export default class Blog extends Component<AppProps, AppState> {
   }
 
   handlePageClick(pageNumber) {
-    this.setState({ pageOneActive: pageNumber == 0 ? "active" : "" });
-    this.setState({ pageTwoActive: pageNumber == 1 ? "active" : "" });
-    this.setState({ pageThreeActive: pageNumber == 2 ? "active" : "" });
-    this.setState({ pageFourActive: pageNumber == 3 ? "active" : "" });
-    this.setState({ pageFiveActive: pageNumber == 4 ? "active" : "" });
-    this.setState({ pageSixActive: pageNumber == 5 ? "active" : "" });
-    this.setState({ pageSevenActive: pageNumber == 6 ? "active" : "" });
-    this.setState({ pageEightActive: pageNumber == 7 ? "active" : "" });
-    this.setState({ pageNineActive: pageNumber == 8 ? "active" : "" });
-    this.setState({ pageTenActive: pageNumber == 9 ? "active" : "" });
-    this.setState({ pageElevenActive: pageNumber == 10 ? "active" : "" });
-    this.setState({ pageTwelveActive: pageNumber == 11 ? "active" : "" });
-    this.setState({ pageThirteenActive: pageNumber == 12 ? "active" : "" });
-    this.setState({ pageFourteenActive: pageNumber == 13 ? "active" : "" });
-    this.setState({ pageFifteenActive: pageNumber == 14 ? "active" : "" });
-    this.setState({ pageSixteenActive: pageNumber == 15 ? "active" : "" });
-    this.setState({ pageSeventeenActive: pageNumber == 16 ? "active" : "" });
-    this.setState({ pageEighteenActive: pageNumber == 17 ? "active" : "" });
-    this.setState({ pageNineteenActive: pageNumber == 18 ? "active" : "" });
-    this.setState({ pageTwentyActive: pageNumber == 19 ? "active" : "" });
-
     this.setState({ buttonText: "Content is loading..." });
     this.setState({ selectedClass: "show" });
 
@@ -311,12 +282,15 @@ export default class Blog extends Component<AppProps, AppState> {
     });
   }
 
-  handleMorePag() {
-    console.log("handling");
-    if (this.state.secondHalfClass == "hidden") {
-      this.setState({ secondHalfClass: "" });
+  pagination() {}
+
+  handleClassName(i) {
+    let currentPage = this.state.postOffset / 9 + 1;
+    console.log("currentPage", currentPage);
+    if (i == currentPage) {
+      return "active";
     } else {
-      this.setState({ secondHalfClass: "hidden" });
+      return "";
     }
   }
 
@@ -334,10 +308,9 @@ export default class Blog extends Component<AppProps, AppState> {
               }}
               type="text"
               id="search"
-              placeholder="Search Articles"
+              placeholder="Search Posts"
               default-value=""
             />
-            <span className="media-boxes-clear fa fa-close"></span>
           </div>
 
           <div className="media-boxes-drop-down">
@@ -352,7 +325,9 @@ export default class Blog extends Component<AppProps, AppState> {
               <li className="cat-item">
                 <a
                   onClick={() => this.handleServiceClick(-1, "all")}
-                  dangerouslySetInnerHTML={{ __html: "Primary Services" }}
+                  dangerouslySetInnerHTML={{
+                    __html: "All Services",
+                  }}
                 />
               </li>
               {this.state.services.map((category, id) => {
@@ -362,7 +337,9 @@ export default class Blog extends Component<AppProps, AppState> {
                       onClick={() =>
                         this.handleServiceClick(category.id, category.name)
                       }
-                      dangerouslySetInnerHTML={{ __html: category.name }}
+                      dangerouslySetInnerHTML={{
+                        __html: category.name,
+                      }}
                     />
                   </li>
                 );
@@ -382,7 +359,9 @@ export default class Blog extends Component<AppProps, AppState> {
               <li className="cat-item">
                 <a
                   onClick={() => this.handleServiceClick(-1, "all")}
-                  dangerouslySetInnerHTML={{ __html: "Our Industries" }}
+                  dangerouslySetInnerHTML={{
+                    __html: "All Sectors",
+                  }}
                 />
               </li>
               {this.state.industries.map((category, id) => {
@@ -392,7 +371,9 @@ export default class Blog extends Component<AppProps, AppState> {
                       onClick={() =>
                         this.handleIndustryClick(category.id, category.name)
                       }
-                      dangerouslySetInnerHTML={{ __html: category.name }}
+                      dangerouslySetInnerHTML={{
+                        __html: category.name,
+                      }}
                     />
                   </li>
                 );
@@ -436,12 +417,18 @@ export default class Blog extends Component<AppProps, AppState> {
             return (
               <div className="col-md-4 post" key={id}>
                 {image()}
-                <div className="post-footer">
-                  <div className="date">{date}</div>
-                </div>
+                <div className="post-footer"></div>
+                <div
+                  className="excerpt"
+                  dangerouslySetInnerHTML={{
+                    __html: date,
+                  }}
+                />
                 <a
                   href={post.link}
-                  dangerouslySetInnerHTML={{ __html: post.title.rendered }}
+                  dangerouslySetInnerHTML={{
+                    __html: post.title.rendered,
+                  }}
                 />
               </div>
             );
@@ -455,188 +442,18 @@ export default class Blog extends Component<AppProps, AppState> {
 
           <div className="pagination-custom">
             <p className="title">Posts Navigation</p>
-            <span
-              className={this.state.pageOneActive}
-              onClick={() => {
-                this.handlePageClick(0);
-              }}
-            >
-              1
-            </span>
-            |
-            <span
-              className={this.state.pageTwoActive}
-              onClick={() => {
-                this.handlePageClick(1);
-              }}
-            >
-              2
-            </span>
-            |
-            <span
-              className={this.state.pageThreeActive}
-              onClick={() => {
-                this.handlePageClick(2);
-              }}
-            >
-              3
-            </span>
-            <span className={"secondHalf " + this.state.secondHalfClass}>
-              |
-              <span
-                className={this.state.pageFourActive}
-                onClick={() => {
-                  this.handlePageClick(3);
-                }}
-              >
-                4
-              </span>
-              |
-              <span
-                className={this.state.pageFiveActive}
-                onClick={() => {
-                  this.handlePageClick(4);
-                }}
-              >
-                5
-              </span>
-              |
-              <span
-                className={this.state.pageSixActive}
-                onClick={() => {
-                  this.handlePageClick(5);
-                }}
-              >
-                6
-              </span>
-              |
-              <span
-                className={this.state.pageSevenActive}
-                onClick={() => {
-                  this.handlePageClick(6);
-                }}
-              >
-                7
-              </span>
-              |
-              <span
-                className={this.state.pageEightActive}
-                onClick={() => {
-                  this.handlePageClick(7);
-                }}
-              >
-                8
-              </span>
-              |
-              <span
-                className={this.state.pageNineActive}
-                onClick={() => {
-                  this.handlePageClick(8);
-                }}
-              >
-                9
-              </span>
-              |
-              <span
-                className={this.state.pageTenActive}
-                onClick={() => {
-                  this.handlePageClick(9);
-                }}
-              >
-                10
-              </span>
-              |
-              <span
-                className={this.state.pageElevenActive}
-                onClick={() => {
-                  this.handlePageClick(10);
-                }}
-              >
-                11
-              </span>
-              |
-              <span
-                className={this.state.pageTwelveActive}
-                onClick={() => {
-                  this.handlePageClick(11);
-                }}
-              >
-                12
-              </span>
-              |
-              <span
-                className={this.state.pageThirteenActive}
-                onClick={() => {
-                  this.handlePageClick(12);
-                }}
-              >
-                13
-              </span>
-              |
-              <span
-                className={this.state.pageFourteenActive}
-                onClick={() => {
-                  this.handlePageClick(13);
-                }}
-              >
-                14
-              </span>
-              |
-              <span
-                className={this.state.pageFifteenActive}
-                onClick={() => {
-                  this.handlePageClick(14);
-                }}
-              >
-                15
-              </span>
-              |
-              <span
-                className={this.state.pageSixteenActive}
-                onClick={() => {
-                  this.handlePageClick(15);
-                }}
-              >
-                16
-              </span>
-              |
-              <span
-                className={this.state.pageSeventeenActive}
-                onClick={() => {
-                  this.handlePageClick(16);
-                }}
-              >
-                17
-              </span>
-              |
-              <span
-                className={this.state.pageEighteenActive}
-                onClick={() => {
-                  this.handlePageClick(17);
-                }}
-              >
-                18
-              </span>
-              |
-              <span
-                className={this.state.pageNineteenActive}
-                onClick={() => {
-                  this.handlePageClick(18);
-                }}
-              >
-                19
-              </span>
-              |
-              <span
-                className={this.state.pageTwentyActive}
-                onClick={() => {
-                  this.handlePageClick(19);
-                }}
-              >
-                20
-              </span>
-            </span>
-            <span onClick={this.handleMorePag}>...</span>
+            {this.state.pagesArr.map((i, index) => {
+              return (
+                <span
+                  onClick={() => {
+                    this.handlePageClick(index);
+                  }}
+                  className={this.handleClassName(i)}
+                >
+                  {i}
+                </span>
+              );
+            })}
             <i className="far fa-chevron-double-right"></i>
           </div>
         </div>
